@@ -1,12 +1,16 @@
 import { HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
+import Header from "../Header/Header";
 
 function App() {
   return (
     <HashRouter>
-      <Routes>
-        <Route></Route>
-      </Routes>
+      <div className="app">
+        <Header />
+        <Routes>
+          <Route></Route>
+        </Routes>
+      </div>
     </HashRouter>
   );
 }
