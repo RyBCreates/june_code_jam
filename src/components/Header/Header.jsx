@@ -1,9 +1,11 @@
+import Navbar from "../Navbar/Navbar";
 import "./Header.css";
 
 function Header() {
   return (
     <header className="header">
-      <h1 className="header__title">Hello from the Header</h1>
+      <h1 className="header__title">Itinerarium</h1>
+      <Navbar />
     </header>
   );
 }

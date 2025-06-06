@@ -1,0 +1,72 @@
+.navbar {
+  font-size: 45px;
+  font-family: "Cabinet";
+  font-weight: 700;
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 40px;
+  cursor: pointer;
+  margin: 20px 0px;
+  padding: 0;
+}
+
+.navbar__link:hover {
+  color: rgb(118, 112, 112);
+}
+
+.navbar__link-home {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.navbar__link-home:active,
+.navbar__link-home:focus {
+  color: black;
+  border-bottom: 5px solid black;
+}
+
+.navbar__link-about {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.navbar__link-about:active,
+.navbar__link-about:focus {
+  border-bottom: 5px solid black;
+  color: black;
+}
+
+.navbar__link-skills {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.navbar__link-skills:active,
+.navbar__link-skills:focus {
+  color: black;
+  border-bottom: 5px solid black;
+}
+
+.navbar__link-projects {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+.navbar__link-projects:active,
+.navbar__link-projects:focus {
+  color: black;
+  border-bottom: 5px solid black;
+}
+
+.navbar__link-contact {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.navbar__link-contact:active,
+.navbar__link-contact:focus {
+  color: black;
+  border-bottom: 5px solid black;
+}
