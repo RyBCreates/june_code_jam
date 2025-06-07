@@ -21,8 +21,20 @@ function App() {
     const handleEscClose = (e) => {
       if (e.key === "Escape") closeModal();
     };
+
+    const handleClickOutside = (e) => {
+      if (e.target.classList.contains("modal")) {
+        closeModal();
+      }
+    };
+
     window.addEventListener("keydown", handleEscClose);
-    return () => window.removeEventListener("keydown", handleEscClose);
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("keydown", handleEscClose);
+      window.removeEventListener("click", handleClickOutside);
+    };
   }, []);
 
   return (
