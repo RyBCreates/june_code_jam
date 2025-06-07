@@ -4,6 +4,7 @@ import "./App.css";
 import Header from "../Header/Header";
 import Home from "../Home/Home";
 import Trips from "../Trips/Trips";
+import Calendar from "../Calendar/Calendar";
 import About from "../About/About";
 import NewPlanModal from "../Modals/NewPlanModal/NewPlanModal";
 
@@ -52,6 +53,7 @@ function App() {
               path="/trips"
               element={<Trips handleNewTripClick={handleNewTripClick} />}
             />
+            <Route path="/Calendar" element={<Calendar />} />
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
