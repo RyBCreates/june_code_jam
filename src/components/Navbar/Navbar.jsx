@@ -9,8 +9,8 @@ function Navbar() {
         <NavLink to="/" className="navbar__link-home">
           <li className="navbar__link">Home</li>
         </NavLink>
-        <NavLink to="/about" className="navbar__link-about">
-          <li className="navbar__link">About</li>
+        <NavLink to="/trips" className="navbar__link-trips">
+          <li className="navbar__link">Trips</li>
         </NavLink>
 
         <NavLink to="/skills" className="navbar__link-skills">
@@ -21,8 +21,8 @@ function Navbar() {
           <li className="navbar__link">Projects</li>
         </NavLink>
 
-        <NavLink to="/contact" className="navbar__link-contact">
-          <li className="navbar__link">Contact</li>
+        <NavLink to="/about" className="navbar__link-about">
+          <li className="navbar__link">About</li>
         </NavLink>
       </ul>
     </nav>

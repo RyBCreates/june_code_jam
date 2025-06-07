@@ -3,3 +3,21 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.header__title {
+  color: Green;
+}
+
+.header__new-plan-button {
+  font-size: 32px;
+  width: 200px;
+  height: 60px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+}
+
+.header__new-plan-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

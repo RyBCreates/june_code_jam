@@ -30,12 +30,12 @@
   border-bottom: 5px solid black;
 }
 
-.navbar__link-about {
+.navbar__link-trips {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
-.navbar__link-about:active,
-.navbar__link-about:focus {
+.navbar__link-trips:active,
+.navbar__link-trips:focus {
   border-bottom: 5px solid black;
   color: black;
 }
@@ -60,13 +60,13 @@
   border-bottom: 5px solid black;
 }
 
-.navbar__link-contact {
+.navbar__link-about {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
 
-.navbar__link-contact:active,
-.navbar__link-contact:focus {
+.navbar__link-about:active,
+.navbar__link-about:focus {
   color: black;
   border-bottom: 5px solid black;
 }
