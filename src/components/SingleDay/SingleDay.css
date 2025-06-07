@@ -1,0 +1,133 @@
+.single-day {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  padding: 40px;
+}
+
+.single-day__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.single-day__date {
+  font-size: 42px;
+  margin: 0;
+}
+
+.single-day__button-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.single-day__left-arrow {
+  width: 48px;
+  background-color: transparent;
+  border: none;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.single-day__left-arrow:hover {
+  opacity: 0.6;
+}
+
+.single-day__calendar {
+  width: 48px;
+  background-color: transparent;
+  border: none;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.single-day__calendar:hover {
+  opacity: 0.6;
+}
+
+.single-day__right-arrow {
+  width: 48px;
+  background-color: transparent;
+  border: none;
+  aspect-ratio: 1;
+  cursor: pointer;
+}
+
+.single-day__right-arrow:hover {
+  opacity: 0.6;
+}
+
+.single-day__event-cards {
+  list-style: none;
+  border: 1px solid grey;
+  border-radius: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.single-day__event-card {
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 3px solid grey;
+  margin: 0 25px;
+}
+
+.single-day__event-card:last-of-type {
+  border-bottom: none;
+}
+
+.single-day__time {
+  font-size: 32px;
+  margin: 0 20px 0 0;
+  align-self: center;
+}
+
+.single-day__event-container {
+}
+
+.single-day__event-title {
+  margin: 0 0 10px 0;
+  border-bottom: 1px solid grey;
+  font-size: 40px;
+}
+
+.single-day__event-info-container {
+}
+
+.single-day__event-location-container {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.single-day__location-icon {
+  width: 40px;
+  aspect-ratio: 1;
+  margin-right: 10px;
+  border: none;
+  background-color: transparent;
+}
+
+.single-day__location-address {
+  font-size: 36px;
+  margin: 0;
+}
+
+.single-day__event-notes-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.single-day__event-note {
+  font-size: 32px;
+  margin: 0;
+  padding: 10px 25px;
+  border-radius: 20px;
+  background-color: rgb(184, 184, 184);
+}
