@@ -1,7 +1,7 @@
 import Navbar from "../Navbar/Navbar";
 import "./Header.css";
 
-function Header({ handleNewPlanClick }) {
+function Header({ handleNewTripClick }) {
   return (
     <header className="header">
       <h1 className="header__title">Itinerarium</h1>
@@ -9,9 +9,9 @@ function Header({ handleNewPlanClick }) {
       <button
         className="header__new-plan-button"
         type="button"
-        onClick={handleNewPlanClick}
+        onClick={handleNewTripClick}
       >
-        New Plan
+        New Trip
       </button>
     </header>
   );

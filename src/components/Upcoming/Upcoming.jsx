@@ -2,7 +2,7 @@ import Airplane from "../../assets/travel-icons/airplane.png";
 import Car from "../../assets/travel-icons/car.png";
 import "./Upcoming.css";
 
-function Upcoming({ handleNewPlanClick }) {
+function Upcoming({ handleNewTripClick }) {
   return (
     <div className="upcoming">
       <h2 className="upcoming__title">Upcoming Trips</h2>
@@ -55,7 +55,7 @@ function Upcoming({ handleNewPlanClick }) {
       <button
         className="upcoming__new-plan-button"
         type="button"
-        onClick={handleNewPlanClick}
+        onClick={handleNewTripClick}
       >
         Create a New Trip
       </button>

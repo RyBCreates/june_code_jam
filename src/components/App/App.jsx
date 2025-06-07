@@ -3,13 +3,14 @@ import { HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
 import Home from "../Home/Home";
+import Trips from "../Trips/Trips";
 import About from "../About/About";
 import NewPlanModal from "../Modals/NewPlanModal/NewPlanModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
 
-  const handleNewPlanClick = () => {
+  const handleNewTripClick = () => {
     setActiveModal("new-plan");
   };
 
@@ -41,11 +42,15 @@ function App() {
     <HashRouter>
       <div className="app">
         <div className="app__content">
-          <Header handleNewPlanClick={handleNewPlanClick} />
+          <Header handleNewTripClick={handleNewTripClick} />
           <Routes>
             <Route
               path="/"
-              element={<Home handleNewPlanClick={handleNewPlanClick} />}
+              element={<Home handleNewTripClick={handleNewTripClick} />}
+            />
+            <Route
+              path="/trips"
+              element={<Trips handleNewTripClick={handleNewTripClick} />}
             />
             <Route path="/about" element={<About />} />
           </Routes>

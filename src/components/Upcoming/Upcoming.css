@@ -46,10 +46,12 @@
   aspect-ratio: 1;
   background-color: #72c8f7;
   padding: 20px;
+  object-fit: cover;
 }
 
 .upcoming__trip-container {
   /* width: 100%; */
+  /* going to add buttons on right side of each card */
   height: 100%;
   padding: 20px 30px;
   box-sizing: border-box;

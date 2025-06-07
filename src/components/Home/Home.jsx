@@ -2,10 +2,10 @@ import Upcoming from "../Upcoming/Upcoming";
 import SingleDay from "../SingleDay/SingleDay";
 import "./Home.css";
 
-function Home({ handleNewPlanClick }) {
+function Home({ handleNewTripClick }) {
   return (
     <div className="Home">
-      <Upcoming handleNewPlanClick={handleNewPlanClick} />
+      <Upcoming handleNewTripClick={handleNewTripClick} />
       <SingleDay />
     </div>
   );
