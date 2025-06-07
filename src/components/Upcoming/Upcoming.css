@@ -1,0 +1,98 @@
+.upcoming {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.upcoming__title {
+  margin: 40px 0 30px;
+  padding-bottom: 5px;
+  font-size: 42px;
+  border-bottom: 1px solid black;
+}
+
+.upcoming__cards-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.upcoming__card {
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 5px 10px 20px 2px rgb(0 0 0 / 40%);
+  scale: 100%;
+  transition: 0.5s linear;
+}
+
+.upcoming__card:hover {
+  scale: 101%;
+  box-shadow: 20px 20px 40px 6px rgb(0 0 0 / 40%);
+  cursor: pointer;
+}
+
+.upcoming__image {
+  width: 10%;
+  aspect-ratio: 1;
+  background-color: #72c8f7;
+  padding: 20px;
+}
+
+.upcoming__trip-container {
+  /* width: 100%; */
+  height: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.upcoming__trip-name {
+  font-size: 40px;
+  margin: 0 0 12px 0;
+}
+
+.upcoming__info {
+  display: flex;
+  gap: 20px;
+  font-size: 24px;
+}
+
+.upcoming__dates {
+  margin: 0;
+}
+
+.upcoming__info-divider {
+  margin: 0;
+}
+
+.upcoming__location {
+  margin: 0;
+}
+
+.upcoming__new-plan-button {
+  margin: 30px auto;
+  width: 500px;
+  height: 80px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: black;
+  color: white;
+  font-size: 30px;
+}
+
+.upcoming__new-plan-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}

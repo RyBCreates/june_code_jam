@@ -13,12 +13,8 @@ function Navbar() {
           <li className="navbar__link">Trips</li>
         </NavLink>
 
-        <NavLink to="/skills" className="navbar__link-skills">
-          <li className="navbar__link">Skills</li>
-        </NavLink>
-
-        <NavLink to="/projects" className="navbar__link-projects">
-          <li className="navbar__link">Projects</li>
+        <NavLink to="/calendar" className="navbar__link-calendar">
+          <li className="navbar__link">Calendar</li>
         </NavLink>
 
         <NavLink to="/about" className="navbar__link-about">

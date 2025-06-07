@@ -1,5 +1,5 @@
 .navbar {
-  font-size: 45px;
+  font-size: 36px;
   font-family: "Cabinet";
   font-weight: 700;
 }
@@ -40,22 +40,12 @@
   color: black;
 }
 
-.navbar__link-skills {
+.navbar__link-calendar {
   color: rgb(0, 0, 0);
   text-decoration: none;
 }
-.navbar__link-skills:active,
-.navbar__link-skills:focus {
-  color: black;
-  border-bottom: 5px solid black;
-}
-
-.navbar__link-projects {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
-}
-.navbar__link-projects:active,
-.navbar__link-projects:focus {
+.navbar__link-calendar:active,
+.navbar__link-calendar:focus {
   color: black;
   border-bottom: 5px solid black;
 }

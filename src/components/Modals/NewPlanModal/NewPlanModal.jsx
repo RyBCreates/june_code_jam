@@ -2,17 +2,16 @@ import { useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../Modals.css";
 
-function NewPlanModal({
-  closeModal,
-  activeModal,
-  modalType,
-  handleSubmit,
-  buttonText,
-}) {
+function NewPlanModal({ closeModal, activeModal, buttonText }) {
   useEffect(() => {
     if (activeModal === "new-plan") {
     }
   }, [activeModal]);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    closeModal();
+  };
 
   return (
     <div className="new-plan-modal">
@@ -25,24 +24,24 @@ function NewPlanModal({
         buttonText={buttonText}
       >
         <div className="modal__input_type_text">
-          <label htmlFor="email" className="modal__label">
-            Email*
+          <label htmlFor="trip-name" className="modal__label">
+            Trip Name*
             <input
               required
               className="modal__input"
-              type="email"
-              id="email"
-              placeholder="Email"
+              type="text"
+              id="trip-name"
+              placeholder="New York City"
             ></input>
           </label>
-          <label htmlFor="password" className="modal__label">
-            Password*
+          <label htmlFor="dates" className="modal__label">
+            Dates *
             <input
               required
               className="modal__input"
-              type="password"
-              id="password"
-              placeholder="Password"
+              type="text"
+              id="dates"
+              placeholder="Select Your Dates"
             ></input>
           </label>
         </div>
