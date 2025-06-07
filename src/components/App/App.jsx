@@ -2,13 +2,14 @@ import { useState } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Header from "../Header/Header";
-import Main from "../Main/Main";
-import NewPlanModal from "../Modals/ModalWithForm/ModalWithForm";
+// import Main from "../Main/Main";
+import About from "../About/About";
+import NewPlanModal from "../Modals/NewPlanModal/NewPlanModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
 
-  const openNewPlanModal = (e) => {
+  const handleNewPlanClick = () => {
     setActiveModal("new-plan");
   };
 
@@ -24,14 +25,13 @@ function App() {
     <HashRouter>
       <div className="app">
         <div className="app__content">
-          <Header openNewPlanModal={openNewPlanModal} />
-          <Main />
+          <Header onNewPlanClick={handleNewPlanClick} />
+          {/* <Main /> */}
+          {/* ^^^ Baseplate for new components */}
           <Routes>
-            <Route></Route>
+            <Route path="/about" element={<About />} />
           </Routes>
         </div>
-
-        {/* NewPlanModal is currently just ModalWithForm */}
         <NewPlanModal activeModal={activeModal} closeModal={closeModal} />
       </div>
     </HashRouter>

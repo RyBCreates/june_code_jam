@@ -5,7 +5,9 @@
 }
 
 .header__title {
-  color: Green;
+  font-size: 64px;
+
+  color: rgb(48, 106, 52);
 }
 
 .header__new-plan-button {
