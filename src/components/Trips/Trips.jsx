@@ -1,10 +1,14 @@
+import TripCard from "../TripCard/TripCard";
 import "./Trips.css";
 
-function Trips({ handleNewTripClick }) {
+function Trips({ handleNewTripClick, trips }) {
   return (
     <div className="trips">
       <h2 className="trips__title">Your Trips</h2>
       <ul className="trips__cards">
+        {trips.map((trip) => {
+          return <TripCard key={trip._id} trip={trip} />;
+        })}
         <li
           className="trips__card trips__new-card"
           onClick={handleNewTripClick}
@@ -18,14 +22,6 @@ function Trips({ handleNewTripClick }) {
             <h3 className="trips__name">Paris</h3>
             <p className="trips__dates">Apr 15th-20th</p>
             <p className="trips__location">Paris, France</p>
-          </div>
-          <img src={null} alt="trip name" className="trips__image" />
-        </li>
-        <li className="trips__card" key="trip1">
-          <div className="trips__info">
-            <h3 className="trips__name">Trip.name</h3>
-            <p className="trips__dates">Trip.dates</p>
-            <p className="trips__location">Trip.location</p>
           </div>
           <img src={null} alt="trip name" className="trips__image" />
         </li>

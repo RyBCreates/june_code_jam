@@ -1,8 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../Modals.css";
 
-function NewTripModal({ closeModal, activeModal, buttonText }) {
+function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
+  const [name, setName] = useState("");
+  const [dates, setDates] = useState("");
+  const [location, setLocation] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
+  const [travel, setTravel] = useState("");
+
   useEffect(() => {
     if (activeModal === "new-plan") {
     }
@@ -10,6 +16,44 @@ function NewTripModal({ closeModal, activeModal, buttonText }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    if (!name.trim()) {
+      alert("Please enter a name");
+      return;
+    }
+
+    if (!dates.trim()) {
+      alert("Please enter your dates");
+      return;
+    }
+
+    if (!location.trim()) {
+      alert("Please enter your destination");
+      return;
+    }
+
+    if (!imageUrl.trim()) {
+      alert("Please enter an image URL");
+      return;
+    }
+
+    if (!travel) {
+      alert("Please select a travel type");
+      return;
+    }
+
+    onAddTrip(name, dates, location, imageUrl, travel)
+      .then(() => {
+        setName("");
+        setDates("");
+        setLocation("");
+        setImageUrl("");
+        setTravel("");
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+
     closeModal();
   };
 
@@ -32,6 +76,8 @@ function NewTripModal({ closeModal, activeModal, buttonText }) {
               type="text"
               id="trip-name"
               placeholder="New York City"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             ></input>
           </label>
           <label htmlFor="dates" className="modal__label">
@@ -42,6 +88,8 @@ function NewTripModal({ closeModal, activeModal, buttonText }) {
               type="text"
               id="dates"
               placeholder="Select Your Dates"
+              value={dates}
+              onChange={(e) => setDates(e.target.value)}
             ></input>
           </label>
           <label htmlFor="location" className="modal__label">
@@ -52,6 +100,8 @@ function NewTripModal({ closeModal, activeModal, buttonText }) {
               type="text"
               id="location"
               placeholder="Enter Your Destination"
+              value={location}
+              onChange={(e) => setLocation(e.target.value)}
             ></input>
           </label>
           <label htmlFor="image" className="modal__label">
@@ -62,6 +112,8 @@ function NewTripModal({ closeModal, activeModal, buttonText }) {
               type="Url"
               id="image"
               placeholder="Image Url"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
             ></input>
           </label>
           <fieldset className="modal__radio-buttons">
@@ -75,8 +127,8 @@ function NewTripModal({ closeModal, activeModal, buttonText }) {
                 id="plane"
                 name="travel"
                 value="plane"
-                // checked={travel === "plane"}
-                // onChange={(e) => setTravel(e.target.value)}
+                checked={travel === "plane"}
+                onChange={(e) => setTravel(e.target.value)}
               />
               Plane
             </label>
@@ -87,8 +139,8 @@ function NewTripModal({ closeModal, activeModal, buttonText }) {
                 id="car"
                 name="travel"
                 value="car"
-                // checked={travel === "car"}
-                // onChange={(e) => setTravel(e.target.value)}
+                checked={travel === "car"}
+                onChange={(e) => setTravel(e.target.value)}
               />
               Car
             </label>
@@ -99,8 +151,8 @@ function NewTripModal({ closeModal, activeModal, buttonText }) {
                 id="boat"
                 name="travel"
                 value="boat"
-                // checked={travel === "boat"}
-                // onChange={(e) => setTravel(e.target.value)}
+                checked={travel === "boat"}
+                onChange={(e) => setTravel(e.target.value)}
               />
               Boat
             </label>

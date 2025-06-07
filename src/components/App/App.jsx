@@ -40,6 +40,29 @@ function App() {
     };
   }, []);
 
+  //Create a New trip
+  const [trips, setTrips] = useState([]);
+
+  const handleAddTripSubmit = (name, dates, location, imageUrl, travel) => {
+    const newTrip = {
+      name,
+      dates,
+      location,
+      imageUrl,
+      travel,
+    };
+    return addTrip(newTrip)
+      .then((addedTrip) => {
+        setTrips([addedTrip, ...trips]);
+        closeModal();
+        return addedTrip;
+      })
+      .catch((error) => {
+        console.error("Error adding trip:", error);
+        throw error;
+      });
+  };
+
   return (
     <HashRouter>
       <div className="app">
@@ -48,11 +71,15 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home handleNewTripClick={handleNewTripClick} />}
+              element={
+                <Home handleNewTripClick={handleNewTripClick} trips={trips} />
+              }
             />
             <Route
               path="/trips"
-              element={<Trips handleNewTripClick={handleNewTripClick} />}
+              element={
+                <Trips handleNewTripClick={handleNewTripClick} trips={trips} />
+              }
             />
             <Route path="/Calendar" element={<Calendar />} />
             <Route path="/about" element={<About />} />
@@ -62,6 +89,7 @@ function App() {
           activeModal={activeModal}
           closeModal={closeModal}
           buttonText="Save Trip"
+          onAddTrip={handleAddTripSubmit}
         />
       </div>
     </HashRouter>
