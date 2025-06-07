@@ -6,13 +6,14 @@ import Home from "../Home/Home";
 import Trips from "../Trips/Trips";
 import Calendar from "../Calendar/Calendar";
 import About from "../About/About";
-import NewPlanModal from "../Modals/NewPlanModal/NewPlanModal";
+import NewTripModal from "../Modals/NewTripModal/NewTripModal";
 
 function App() {
+  //Opening and Closing of Modals
   const [activeModal, setActiveModal] = useState("");
 
   const handleNewTripClick = () => {
-    setActiveModal("new-plan");
+    setActiveModal("new-trip");
   };
 
   const closeModal = () => {
@@ -57,10 +58,10 @@ function App() {
             <Route path="/about" element={<About />} />
           </Routes>
         </div>
-        <NewPlanModal
+        <NewTripModal
           activeModal={activeModal}
           closeModal={closeModal}
-          buttonText="Save Plan"
+          buttonText="Save Trip"
         />
       </div>
     </HashRouter>

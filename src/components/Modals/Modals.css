@@ -88,3 +88,35 @@
 .modal__submit-button:hover {
   background-color: #00000099;
 }
+
+.modal__radio-buttons {
+  display: flex;
+  justify-content: space-around;
+  border: none;
+  gap: 8px;
+  padding-left: 0;
+}
+
+.modal__legend {
+  font-size: 16px;
+  padding: 24px 0 12px;
+  color: #000000;
+}
+
+.modal__label_type_radio {
+  font-family: "Cabinet";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.modal__radio-button {
+  cursor: pointer;
+}
+
+.modal__radio-button:checked {
+  accent-color: #000000;
+}
