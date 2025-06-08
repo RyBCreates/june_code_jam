@@ -75,15 +75,3 @@ function SingleDay() {
 }
 
 export default SingleDay;
-
-// left arrow link
-// <a target="_blank" href="https://icons8.com/icon/84994/back">Back</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-// forward arrow link
-// <a target="_blank" href="https://icons8.com/icon/86517/forward">Forward</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-// calendar link
-//  <a target="_blank" href="https://icons8.com/icon/vvMPt1YPeFbr/calendar">Calendar</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-
-// location tag icon link
-// <a target="_blank" href="https://icons8.com/icon/85049/location">Location Pin</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

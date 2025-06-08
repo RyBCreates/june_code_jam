@@ -13,7 +13,6 @@ function Upcoming({ handleNewTripClick }) {
             src={Airplane}
             alt="airplane-icon"
           ></img>
-          {/* Credit for Airplane Icon: https://icons8.com/icon/2487/airplane-take-off */}
           <div className="upcoming__trip-container">
             <h3 className="upcoming__trip-name">Paris Trip</h3>
             <div className="upcoming__info">
@@ -27,7 +26,6 @@ function Upcoming({ handleNewTripClick }) {
         </li>
         <li className="upcoming__card">
           <img className="upcoming__image" src={Car} alt="car-icon"></img>
-          {/* Credit for Car Icon:  https://icons8.com/icon/16690/sedan */}
           <div className="upcoming__trip-container">
             <h3 className="upcoming__trip-name">New York Here We Come</h3>
             <div className="upcoming__info">

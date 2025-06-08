@@ -12,24 +12,24 @@ const getToken = () => {
 };
 
 export const getTrips = () => {
-  return fetch(`${baseUrl}/items`).then(checkResponse);
+  return fetch(`${baseUrl}/trips`).then(checkResponse);
 };
 
-export const addTrip = (item) => {
+export const addTrip = (trip) => {
   const token = getToken();
-  return fetch(`${baseUrl}/items`, {
+  return fetch(`${baseUrl}/trips`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-    body: JSON.stringify(item),
+    body: JSON.stringify(trip),
   }).then(checkResponse);
 };
 
 export const deleteTrip = (id) => {
   const token = getToken();
-  return fetch(`${baseUrl}/items/${id}`, {
+  return fetch(`${baseUrl}/trips/${id}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${token}`,

@@ -33,6 +33,11 @@ function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
       return;
     }
 
+    if (new Date(startDate) > new Date(endDate)) {
+      alert("Start date must be before end date");
+      return;
+    }
+
     if (!location.trim()) {
       alert("Please enter your destination");
       return;
@@ -92,7 +97,7 @@ function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
             <input
               required
               className="modal__input"
-              type="text"
+              type="date"
               id="start-date"
               placeholder="Select Your Start Date"
               value={startDate}
@@ -104,7 +109,7 @@ function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
             <input
               required
               className="modal__input"
-              type="text"
+              type="date"
               id="end-date"
               placeholder="Select Your End Date"
               value={endDate}

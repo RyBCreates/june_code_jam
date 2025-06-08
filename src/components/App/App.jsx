@@ -12,6 +12,7 @@ import About from "../About/About";
 import RegisterModal from "../Modals/RegisterModal/RegisterModal";
 import LoginModal from "../Modals/LoginModal/LoginModal";
 import NewTripModal from "../Modals/NewTripModal/NewTripModal";
+import ConfirmationModal from "../Modals/ConfirmationModal/ConfirmationModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function App() {
@@ -107,6 +108,17 @@ function App() {
     }
   }, []);
 
+  //Load Trips
+  useEffect(() => {
+    getTrips()
+      .then((data) => {
+        setTrips(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching trips:", error);
+      });
+  }, []);
+
   //Opening and Closing of Modals
   const [activeModal, setActiveModal] = useState("");
 
@@ -169,6 +181,30 @@ function App() {
       });
   };
 
+  //Delete a Trip
+  const [tripToDelete, setTripToDelete] = useState(null);
+
+  const handleDeleteTrip = (trip) => {
+    setTripToDelete(trip);
+    setActiveModal("confirmation");
+  };
+
+  const handleConfirmDelete = () => {
+    if (!tripToDelete) return;
+
+    deleteTrip(tripToDelete._id)
+      .then(() => {
+        setTrips((prevTrips) =>
+          prevTrips.filter((trip) => trip._id !== tripToDelete._id)
+        );
+        setTripToDelete(null);
+        closeModal();
+      })
+      .catch((error) => {
+        console.error("Error deleting trip:", error);
+      });
+  };
+
   return (
     <HashRouter>
       <CurrentUserContext.Provider
@@ -202,7 +238,7 @@ function App() {
                     isLoggedIn={isLoggedIn}
                     handleNewTripClick={handleNewTripClick} // onCardClick={handleCardClick}
                     trips={trips}
-                    // handleDeleteCard={handleDeleteCard}
+                    handleDeleteTrip={handleDeleteTrip}
                     // handleLogout={handleLogout}
                     // handleEditProfileClick={handleEditProfileClick}
                   />
@@ -231,6 +267,11 @@ function App() {
             closeModal={closeModal}
             buttonText="Save Trip"
             onAddTrip={handleAddTripSubmit}
+          />
+          <ConfirmationModal
+            activeModal={activeModal}
+            closeModal={closeModal}
+            onConfirm={handleConfirmDelete}
           />
         </div>
       </CurrentUserContext.Provider>

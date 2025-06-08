@@ -62,13 +62,7 @@
   margin: 0 0 5px;
 }
 
-.trips__start-date {
-  font-size: 24px;
-  margin: 0;
-  color: grey;
-}
-
-.trips__end-date {
+.trips__dates {
   font-size: 24px;
   margin: 0;
   color: grey;
