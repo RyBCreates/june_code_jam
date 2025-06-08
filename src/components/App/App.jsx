@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { getTrips, addTrip, deleteTrip, updateProfile } from "../../utils/api";
+import { register, login, checkToken } from "../../utils/auth";
 import "./App.css";
 import Header from "../Header/Header";
 import Home from "../Home/Home";
+import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Trips from "../Trips/Trips";
 import Calendar from "../Calendar/Calendar";
 import About from "../About/About";
@@ -13,7 +15,7 @@ import NewTripModal from "../Modals/NewTripModal/NewTripModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function App() {
-  //Registration/Login/Auth
+  //Registration && Login
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
 
@@ -54,6 +56,56 @@ function App() {
         console.error("Registration error:", error);
       });
   };
+
+  const handleLogin = ({ email, password }) => {
+    return login({ email, password })
+      .then((data) => {
+        if (data.token) {
+          setIsLoggedIn(true);
+          return checkToken(data.token);
+        }
+      })
+      .then((userData) => {
+        setCurrentUser(userData);
+        closeModal();
+      })
+      .catch((error) => {
+        console.error("Login error:", error);
+      });
+  };
+
+  //LogOut
+  const handleLogout = () => {
+    localStorage.removeItem("jwt");
+    setIsLoggedIn(false);
+    setCurrentUser(null);
+  };
+
+  const updateUser = ({ name }) => {
+    return updateProfile({ name })
+      .then(() => {
+        setCurrentUser({ ...currentUser, name });
+      })
+      .catch((error) => {
+        console.error("Error updating user:", error);
+      });
+  };
+
+  //Authorization
+  useEffect(() => {
+    const token = localStorage.getItem("jwt");
+    if (token) {
+      checkToken(token)
+        .then((data) => {
+          setIsLoggedIn(true);
+          setCurrentUser(data);
+        })
+        .catch((err) => {
+          console.error(err);
+          localStorage.removeItem("jwt");
+        });
+    }
+  }, []);
 
   //Opening and Closing of Modals
   const [activeModal, setActiveModal] = useState("");
@@ -111,49 +163,69 @@ function App() {
 
   return (
     <HashRouter>
-      <div className="app">
-        <div className="app__content">
-          <Header
-            handleNewTripClick={handleNewTripClick}
-            handleRegisterClick={handleRegisterClick}
-            handleLoginClick={handleLoginClick}
+      <CurrentUserContext.Provider
+        value={{
+          currentUser,
+          handleLogin,
+          handleLogout,
+          updateUser,
+        }}
+      >
+        <div className="app">
+          <div className="app__content">
+            <Header
+              handleNewTripClick={handleNewTripClick}
+              handleRegisterClick={handleRegisterClick}
+              handleLoginClick={handleLoginClick}
+            />
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Home handleNewTripClick={handleNewTripClick} trips={trips} />
+                }
+              />
+
+              <Route
+                path="/trips"
+                element={
+                  <ProtectedRoute
+                    element={Trips}
+                    isLoggedIn={isLoggedIn}
+                    handleNewTripClick={handleNewTripClick} // onCardClick={handleCardClick}
+                    trips={trips}
+                    // handleDeleteCard={handleDeleteCard}
+                    // handleLogout={handleLogout}
+                    // handleEditProfileClick={handleEditProfileClick}
+                  />
+                }
+              />
+              <Route path="/Calendar" element={<Calendar />} />
+              <Route path="/about" element={<About />} />
+            </Routes>
+          </div>
+          <RegisterModal
+            activeModal={activeModal}
+            closeModal={closeModal}
+            buttonText="Sign Up"
+            switchToLogin={switchToLogin}
+            onRegister={handleRegister}
           />
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Home handleNewTripClick={handleNewTripClick} trips={trips} />
-              }
-            />
-            <Route
-              path="/trips"
-              element={
-                <Trips handleNewTripClick={handleNewTripClick} trips={trips} />
-              }
-            />
-            <Route path="/Calendar" element={<Calendar />} />
-            <Route path="/about" element={<About />} />
-          </Routes>
+          <LoginModal
+            activeModal={activeModal}
+            closeModal={closeModal}
+            buttonText="Log In"
+            switchToRegister={switchToRegister}
+            handleLogin={handleLogin}
+          />
+          <NewTripModal
+            activeModal={activeModal}
+            closeModal={closeModal}
+            buttonText="Save Trip"
+            onAddTrip={handleAddTripSubmit}
+          />
         </div>
-        <RegisterModal
-          activeModal={activeModal}
-          closeModal={closeModal}
-          buttonText="Sign Up"
-          switchToLogin={switchToLogin}
-        />
-        <LoginModal
-          activeModal={activeModal}
-          closeModal={closeModal}
-          buttonText="Log In"
-          switchToRegister={switchToRegister}
-        />
-        <NewTripModal
-          activeModal={activeModal}
-          closeModal={closeModal}
-          buttonText="Save Trip"
-          onAddTrip={handleAddTripSubmit}
-        />
-      </div>
+      </CurrentUserContext.Provider>
     </HashRouter>
   );
 }

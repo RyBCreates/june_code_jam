@@ -14,11 +14,10 @@ function LoginModal({ activeModal, closeModal, buttonText, switchToRegister }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("Email:", email, "Password:", password);
     handleLogin({ email, password })
       .then(() => {
         closeModal();
-        navigate("/profile");
+        navigate("/trips");
       })
       .catch((err) => console.error(err));
   };
