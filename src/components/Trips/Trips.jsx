@@ -20,7 +20,9 @@ function Trips({ handleNewTripClick, trips }) {
         <li className="trips__card" key="trip2">
           <div className="trips__info">
             <h3 className="trips__name">Paris</h3>
-            <p className="trips__dates">Apr 15th-20th</p>
+            <p className="trips__start-date">Apr 15th</p>
+            <p className="trips__end-date">Apr 20th</p>
+
             <p className="trips__location">Paris, France</p>
           </div>
           <img src={null} alt="trip name" className="trips__image" />

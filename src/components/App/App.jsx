@@ -141,10 +141,18 @@ function App() {
   //Create a New trip
   const [trips, setTrips] = useState([]);
 
-  const handleAddTripSubmit = (name, dates, location, imageUrl, travel) => {
+  const handleAddTripSubmit = (
+    name,
+    startDate,
+    endDate,
+    location,
+    imageUrl,
+    travel
+  ) => {
     const newTrip = {
       name,
-      dates,
+      startDate,
+      endDate,
       location,
       imageUrl,
       travel,

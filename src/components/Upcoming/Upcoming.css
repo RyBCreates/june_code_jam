@@ -71,7 +71,11 @@
   font-size: 24px;
 }
 
-.upcoming__dates {
+.upcoming__start-date {
+  margin: 0;
+}
+
+.upcoming__end-date {
   margin: 0;
 }
 

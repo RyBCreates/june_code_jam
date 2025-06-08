@@ -17,7 +17,9 @@ function Upcoming({ handleNewTripClick }) {
           <div className="upcoming__trip-container">
             <h3 className="upcoming__trip-name">Paris Trip</h3>
             <div className="upcoming__info">
-              <p className="upcoming__dates">Apr 15-20</p>
+              <p className="upcoming__start-date">Apr 15th</p>
+              <p className="upcoming__end-date">Apr 20th</p>
+
               <p className="upcoming__info-divider">|</p>
               <p className="upcoming__location">France</p>
             </div>
@@ -29,7 +31,8 @@ function Upcoming({ handleNewTripClick }) {
           <div className="upcoming__trip-container">
             <h3 className="upcoming__trip-name">New York Here We Come</h3>
             <div className="upcoming__info">
-              <p className="upcoming__dates">Nov 10th - Nov 20th</p>
+              <p className="upcoming__start-date">Nov 10th</p>
+              <p className="upcoming__end-date">Nov 20th</p>
               <p className="upcoming__info-divider">|</p>
               <p className="upcoming__location">New York City, New York</p>
             </div>
@@ -45,7 +48,8 @@ function Upcoming({ handleNewTripClick }) {
           <div className="upcoming__trip-container">
             <h3 className="upcoming__trip-name">Mexico</h3>
             <div className="upcoming__info">
-              <p className="upcoming__dates">June 15th - June 18th</p>
+              <p className="upcoming__start-date">June 15th</p>
+              <p className="upcoming__end-date">June 18th</p>
               <p className="upcoming__info-divider">|</p>
               <p className="upcoming__location">Playa Del Carmen</p>
             </div>
