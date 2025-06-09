@@ -34,7 +34,7 @@
   overflow: hidden;
   box-shadow: 5px 10px 20px 2px rgb(0 0 0 / 40%);
   scale: 100%;
-  transition: scale 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 
 .upcoming__card:hover {
@@ -71,22 +71,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  /* gap: 20px; */
   font-size: 24px;
 }
 
 .upcoming__trip-dates {
   margin: 0;
   font-size: 32px;
+  color: grey;
+  border-right: 2px solid #72c8f7;
+  padding-right: 20px;
 }
 
-.upcoming__info-divider {
+/* .upcoming__info-divider {
   margin: 0;
-}
+} */
 
 .upcoming__location {
   margin: 0;
   font-size: 32px;
+  color: grey;
+  padding-left: 20px;
 }
 
 .upcoming__delete-button {

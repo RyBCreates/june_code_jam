@@ -51,9 +51,9 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
         <h3 className={tripNameClass}>{trip.name}</h3>
         <div className={infoClass}>
           <p className={tripDatesClass}>{formattedDates}</p>
-          {variant === "upcoming" && (
+          {/* {variant === "upcoming" && (
             <p className="upcoming__info-divider">|</p>
-          )}
+          )} */}
           <p className={tripLocationClass}>{trip.location}</p>
         </div>
         {variant !== "upcoming" && (
