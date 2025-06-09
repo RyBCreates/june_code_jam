@@ -14,6 +14,7 @@ import RegisterModal from "../Modals/RegisterModal/RegisterModal";
 import LoginModal from "../Modals/LoginModal/LoginModal";
 import NewTripModal from "../Modals/NewTripModal/NewTripModal";
 import ConfirmationModal from "../Modals/ConfirmationModal/ConfirmationModal";
+import EditProfileModal from "../Modals/EditProfileModal/EditProfileModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function App() {
@@ -85,7 +86,7 @@ function App() {
 
   // Update User
   const handleUpdateProfileClick = () => {
-    setActiveModal("update-profile");
+    setActiveModal("edit-profile");
   };
 
   const updateUser = ({ name }) => {
@@ -128,10 +129,6 @@ function App() {
   //Opening and Closing of Modals
   const [activeModal, setActiveModal] = useState("");
 
-  const handleNewTripClick = () => {
-    setActiveModal("new-trip");
-  };
-
   const closeModal = () => {
     setActiveModal("");
   };
@@ -157,6 +154,10 @@ function App() {
   }, []);
 
   //Create a New trip
+  const handleNewTripClick = () => {
+    setActiveModal("new-trip");
+  };
+
   const [trips, setTrips] = useState([]);
 
   const handleAddTripSubmit = (
@@ -286,6 +287,11 @@ function App() {
             activeModal={activeModal}
             closeModal={closeModal}
             onConfirm={handleConfirmDelete}
+          />
+          <EditProfileModal
+            activeModal={activeModal}
+            closeModal={closeModal}
+            buttonText="Update Information"
           />
         </div>
       </CurrentUserContext.Provider>

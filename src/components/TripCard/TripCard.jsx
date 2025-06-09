@@ -4,7 +4,7 @@ import { getFallbackImage } from "../../utils/travelIconFallback";
 import "./TripCard.css";
 
 function TripCard({ variant = "default", trip, handleDeleteTrip }) {
-  // Conditional classes for variant
+  // Conditional classes for "Upcoming" or default variant
   const cardClass =
     variant === "upcoming" ? "upcoming__card" : "trip-card__card";
   const imageClass =
