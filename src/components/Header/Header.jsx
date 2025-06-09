@@ -8,7 +8,7 @@ function Header({ handleNewTripClick, handleRegisterClick, handleLoginClick }) {
 
   return (
     <header className="header">
-      <h1 className="header__title">Itinerarium</h1>
+      <h1 className="header__title">ITINERARIUM</h1>
       {currentUser ? (
         <>
           <Navbar />

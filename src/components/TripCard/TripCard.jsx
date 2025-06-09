@@ -7,12 +7,16 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   // Conditional classes for "Upcoming" or default variant
   const cardClass =
     variant === "upcoming" ? "upcoming__card" : "trip-card__card";
+  const imageContainerClass =
+    variant === "upcoming"
+      ? "upcoming__image-container"
+      : "trip-card__image-container";
   const imageClass =
     variant === "upcoming" ? "upcoming__image" : "trip-card__image";
   const infoContainerClass =
     variant === "upcoming"
       ? "upcoming__trip-container"
-      : "trip-card__info-container";
+      : "trip-card__content-container";
   const infoClass =
     variant === "upcoming" ? "upcoming__info" : "trip-card__info";
   const tripNameClass =
@@ -44,12 +48,14 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   };
   return (
     <li className={cardClass} key={trip._id}>
-      <img
-        src={imageSrc}
-        alt={trip.name}
-        className={imageClass}
-        onError={handleImageError}
-      />
+      <div className={imageContainerClass}>
+        <img
+          src={imageSrc}
+          alt={trip.name}
+          className={imageClass}
+          onError={handleImageError}
+        />
+      </div>
       <div className={infoContainerClass}>
         <h3 className={tripNameClass}>{trip.name}</h3>
         <div className={infoClass}>
@@ -58,12 +64,6 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
         </div>
         {variant !== "upcoming" && (
           <div className="trip-card__button-container">
-            <button
-              className={tripEditButtonClass}
-              // onClick={() => handleDeleteTrip(trip)}
-            >
-              EDIT
-            </button>
             <button
               className={tripDeleteButtonClass}
               onClick={() => handleDeleteTrip(trip)}
@@ -75,12 +75,6 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
       </div>
       {variant === "upcoming" && (
         <div className="upcoming__button-container">
-          <button
-            className={tripEditButtonClass}
-            // onClick={() => handleDeleteTrip(trip)}
-          >
-            EDIT
-          </button>
           <button
             className={tripDeleteButtonClass}
             onClick={() => handleDeleteTrip(trip)}
@@ -94,3 +88,8 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
 }
 
 export default TripCard;
+
+// User Clicks TripCard
+// User is Redirected to Trip Editor
+//   - Trip Editor should be Protected and only logged in users should be able to visit
+//   - Users can only edit trips that they own
