@@ -1,19 +1,16 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../Modals.css";
 
 function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
+  if (activeModal !== "new-trip") return null;
+
   const [name, setName] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [location, setLocation] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [travel, setTravel] = useState("");
-
-  useEffect(() => {
-    if (activeModal === "new-plan") {
-    }
-  }, [activeModal]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -70,7 +67,7 @@ function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
   };
 
   return (
-    <div className="new-trip-modal">
+    <div className="modal new-trip-modal modal_opened">
       <ModalWithForm
         title="Create A Plan"
         closeModal={closeModal}
@@ -133,7 +130,7 @@ function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
             <input
               required
               className="modal__input"
-              type="Url"
+              type="url"
               id="image"
               placeholder="Image Url"
               value={imageUrl}

@@ -3,8 +3,10 @@ import "../Modals.css";
 import closeButton from "../../../assets/close-button.svg";
 
 function ConfirmationModal({ activeModal, closeModal, onConfirm }) {
+  if (activeModal !== "confirmation") return null;
+
   return (
-    <div className={`modal ${activeModal ? "modal_opened" : ""}`}>
+    <div className="modal confirmation-modal modal_opened">
       <div className="modal__content modal__content_type_confirmation">
         <button
           className="modal__close-button"

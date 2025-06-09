@@ -1,7 +1,6 @@
+import { useState } from "react";
 import { formatTripDates } from "../../utils/DateFormat";
-import Car from "../../assets/travel-icons/car.png";
-import Plane from "../../assets/travel-icons/airplane.png";
-import Boat from "../../assets/travel-icons/boat.png";
+import { getFallbackImage } from "../../utils/travelIconFallback";
 import "./TripCard.css";
 
 function TripCard({ trip, handleDeleteTrip }) {
@@ -9,24 +8,22 @@ function TripCard({ trip, handleDeleteTrip }) {
   const formattedDates = formatTripDates(trip.startDate, trip.endDate);
 
   //If invalid image, use fallback image
-  const getFallbackImage = (travelType) => {
-    if (travelType === "car") return Car;
-    if (travelType === "plane") return Plane;
-    if (travelType === "boat") return Boat;
-    return null;
+  const [imageSrc, setImageSrc] = useState(
+    trip.imageUrl || getFallbackImage(trip.travel)
+  );
+
+  const handleImageError = () => {
+    setImageSrc(getFallbackImage(trip.travel));
   };
-
-  const imageSrc = trip.imageUrl || getFallbackImage(trip.travel);
-
   return (
-    <li className="trips__card" key="trip1">
-      <div className="trips__info">
-        <h3 className="trips__name">{trip.name}</h3>
-        <p className="trips__dates">{formattedDates}</p>
+    <li className="trip-card__card" key="trip1">
+      <div className="trip-card__info">
+        <h3 className="trip-card__name">{trip.name}</h3>
+        <p className="trip-card__dates">{formattedDates}</p>
 
-        <p className="trips__location">{trip.location}</p>
+        <p className="trip-card__location">{trip.location}</p>
         <button
-          className="trips__delete-button"
+          className="trip-card__delete-button"
           onClick={() => {
             handleDeleteTrip(trip);
           }}
@@ -34,7 +31,12 @@ function TripCard({ trip, handleDeleteTrip }) {
           DELETE
         </button>
       </div>
-      <img src={imageSrc} alt={trip.name} className="trips__image" />
+      <img
+        src={imageSrc}
+        alt={trip.name}
+        className="trip-card__image"
+        onError={handleImageError}
+      />
     </li>
   );
 }
