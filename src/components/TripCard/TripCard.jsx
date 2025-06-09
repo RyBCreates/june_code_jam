@@ -4,7 +4,7 @@ import { getFallbackImage } from "../../utils/travelIconFallback";
 import "./TripCard.css";
 
 function TripCard({ variant = "default", trip, handleDeleteTrip }) {
-  //Styling Based on Variant
+  // Conditional classes for variant
   const cardClass =
     variant === "upcoming" ? "upcoming__card" : "trip-card__card";
   const imageClass =
@@ -13,9 +13,8 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
     variant === "upcoming"
       ? "upcoming__trip-container"
       : "trip-card__info-container";
-  //Fix This vvvv
-  const infoClass = variant === "upcoming" ? "" : "trip-card__info";
-  //Fix This ^^^^
+  const infoClass =
+    variant === "upcoming" ? "upcoming__info" : "trip-card__info";
   const tripNameClass =
     variant === "upcoming" ? "upcoming__trip-name" : "trip-card__name";
   const tripDatesClass =
@@ -27,12 +26,14 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
       ? "upcoming__delete-button"
       : "trip-card__delete-button";
 
-  //Formats Start and End Dates
+  // Format dates
   const formattedDates = formatTripDates(trip.startDate, trip.endDate);
 
-  //If invalid image, use fallback image
+  // Handle image fallback
   const [imageSrc, setImageSrc] = useState(
-    trip.imageUrl || getFallbackImage(trip.travel)
+    variant === "upcoming"
+      ? getFallbackImage(trip.travel)
+      : trip.imageUrl || getFallbackImage(trip.travel)
   );
 
   const handleImageError = () => {
@@ -40,28 +41,38 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   };
   return (
     <li className={cardClass} key={trip._id}>
-      <div className={infoContainerClass}>
-        <div className={infoClass}>
-          <h3 className={tripNameClass}>{trip.name}</h3>
-          <p className={tripDatesClass}>{formattedDates}</p>
-
-          <p className={tripLocationClass}>{trip.location}</p>
-        </div>
-        <button
-          className={tripDeleteButtonClass}
-          onClick={() => {
-            handleDeleteTrip(trip);
-          }}
-        >
-          DELETE
-        </button>
-      </div>
       <img
         src={imageSrc}
         alt={trip.name}
         className={imageClass}
         onError={handleImageError}
       />
+      <div className={infoContainerClass}>
+        <h3 className={tripNameClass}>{trip.name}</h3>
+        <div className={infoClass}>
+          <p className={tripDatesClass}>{formattedDates}</p>
+          {variant === "upcoming" && (
+            <p className="upcoming__info-divider">|</p>
+          )}
+          <p className={tripLocationClass}>{trip.location}</p>
+        </div>
+        {variant !== "upcoming" && (
+          <button
+            className={tripDeleteButtonClass}
+            onClick={() => handleDeleteTrip(trip)}
+          >
+            DELETE
+          </button>
+        )}
+      </div>
+      {variant === "upcoming" && (
+        <button
+          className={tripDeleteButtonClass}
+          onClick={() => handleDeleteTrip(trip)}
+        >
+          DELETE
+        </button>
+      )}
     </li>
   );
 }

@@ -6,6 +6,7 @@
   transition: 0.3s;
   position: relative;
   display: flex;
+  flex-direction: row-reverse;
   justify-content: space-between;
 }
 
