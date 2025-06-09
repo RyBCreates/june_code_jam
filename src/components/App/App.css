@@ -1,5 +1,9 @@
 .app {
   margin: 0 auto;
   max-width: 1440px;
-  padding: 40px;
+  min-width: 320px;
+  font-size: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  background-color: white;
+  line-height: 1;
 }

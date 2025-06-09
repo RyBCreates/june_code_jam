@@ -12,6 +12,16 @@
   border-bottom: 1px solid black;
 }
 
+.upcoming__link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
 .upcoming__cards-list {
   list-style: none;
   padding: 0;

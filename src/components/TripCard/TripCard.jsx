@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { formatTripDates } from "../../utils/DateFormat";
 import { getFallbackImage } from "../../utils/travelIconFallback";
 import "./TripCard.css";
@@ -7,6 +8,8 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   // Conditional classes for "Upcoming" or default variant
   const cardClass =
     variant === "upcoming" ? "upcoming__card" : "trip-card__card";
+  const cardLinkClass =
+    variant === "upcoming" ? "upcoming__link" : "trip-card__link";
   const imageContainerClass =
     variant === "upcoming"
       ? "upcoming__image-container"
@@ -25,9 +28,6 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
     variant === "upcoming" ? "upcoming__trip-dates" : "trip-card__dates";
   const tripLocationClass =
     variant === "upcoming" ? "upcoming__location" : "trip-card__location";
-  const tripEditButtonClass =
-    variant === "upcoming" ? "upcoming__edit-button" : "trip-card__edit-button";
-
   const tripDeleteButtonClass =
     variant === "upcoming"
       ? "upcoming__delete-button"
@@ -48,22 +48,34 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   };
   return (
     <li className={cardClass} key={trip._id}>
-      <div className={imageContainerClass}>
-        <img
-          src={imageSrc}
-          alt={trip.name}
-          className={imageClass}
-          onError={handleImageError}
-        />
-      </div>
-      <div className={infoContainerClass}>
-        <h3 className={tripNameClass}>{trip.name}</h3>
-        <div className={infoClass}>
-          <p className={tripDatesClass}>{formattedDates}</p>
-          <p className={tripLocationClass}>{trip.location}</p>
+      <Link to="trip-editor" className={cardLinkClass}>
+        <div className={imageContainerClass}>
+          <img
+            src={imageSrc}
+            alt={trip.name}
+            className={imageClass}
+            onError={handleImageError}
+          />
         </div>
-        {variant !== "upcoming" && (
-          <div className="trip-card__button-container">
+        <div className={infoContainerClass}>
+          <h3 className={tripNameClass}>{trip.name}</h3>
+          <div className={infoClass}>
+            <p className={tripDatesClass}>{formattedDates}</p>
+            <p className={tripLocationClass}>{trip.location}</p>
+          </div>
+          {variant !== "upcoming" && (
+            <div className="trip-card__button-container">
+              <button
+                className={tripDeleteButtonClass}
+                onClick={() => handleDeleteTrip(trip)}
+              >
+                DELETE
+              </button>
+            </div>
+          )}
+        </div>
+        {variant === "upcoming" && (
+          <div className="upcoming__button-container">
             <button
               className={tripDeleteButtonClass}
               onClick={() => handleDeleteTrip(trip)}
@@ -72,17 +84,7 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
             </button>
           </div>
         )}
-      </div>
-      {variant === "upcoming" && (
-        <div className="upcoming__button-container">
-          <button
-            className={tripDeleteButtonClass}
-            onClick={() => handleDeleteTrip(trip)}
-          >
-            DELETE
-          </button>
-        </div>
-      )}
+      </Link>
     </li>
   );
 }
