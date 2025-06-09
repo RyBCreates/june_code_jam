@@ -11,7 +11,10 @@
   font-size: 50px;
   font-family: Helvetica;
   font-weight: 100;
-  color: rgb(48, 106, 52);
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 12px;
+  color: #72c8f7;
 }
 
 .header__new-plan-button {

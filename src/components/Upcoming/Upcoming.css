@@ -71,7 +71,7 @@
 }
 
 .upcoming__trip-name {
-  font-size: 40px;
+  font-size: 45px;
   margin: 0 0 12px 0;
 }
 
@@ -84,7 +84,7 @@
 
 .upcoming__trip-dates {
   margin: 0;
-  font-size: 32px;
+  font-size: 40px;
   color: grey;
   border-right: 3px solid #72c8f7;
   padding-right: 20px;
@@ -92,7 +92,7 @@
 
 .upcoming__location {
   margin: 0;
-  font-size: 32px;
+  font-size: 40px;
   color: grey;
   padding-left: 20px;
 }
@@ -101,18 +101,6 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 1s ease-in;
-}
-
-.upcoming__edit-button {
-  margin-left: auto;
-  font-size: 32px;
-  background-color: transparent;
-  border: none;
-  color: black;
-}
-
-.upcoming__edit-button:hover {
-  color: #72c8f7;
 }
 
 .upcoming__delete-button {

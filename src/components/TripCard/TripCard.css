@@ -10,7 +10,7 @@
   justify-content: space-between;
 }
 
-.trip-card__info-container {
+.trip-card__content-container {
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -48,16 +48,6 @@
   visibility: hidden;
   opacity: 0;
   transition: opacity 1s ease-in;
-}
-
-.trip-card__edit-button {
-  background-color: transparent;
-  border: none;
-  color: black;
-}
-
-.trip-card__edit-button:hover {
-  color: #72c8f7;
 }
 
 .trip-card__delete-button {

@@ -16,7 +16,7 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   const infoContainerClass =
     variant === "upcoming"
       ? "upcoming__trip-container"
-      : "trip-card__info-container";
+      : "trip-card__content-container";
   const infoClass =
     variant === "upcoming" ? "upcoming__info" : "trip-card__info";
   const tripNameClass =
@@ -65,12 +65,6 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
         {variant !== "upcoming" && (
           <div className="trip-card__button-container">
             <button
-              className={tripEditButtonClass}
-              // onClick={() => handleDeleteTrip(trip)}
-            >
-              EDIT
-            </button>
-            <button
               className={tripDeleteButtonClass}
               onClick={() => handleDeleteTrip(trip)}
             >
@@ -81,12 +75,6 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
       </div>
       {variant === "upcoming" && (
         <div className="upcoming__button-container">
-          <button
-            className={tripEditButtonClass}
-            // onClick={() => handleDeleteTrip(trip)}
-          >
-            EDIT
-          </button>
           <button
             className={tripDeleteButtonClass}
             onClick={() => handleDeleteTrip(trip)}
@@ -100,3 +88,8 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
 }
 
 export default TripCard;
+
+// User Clicks TripCard
+// User is Redirected to Trip Editor
+//   - Trip Editor should be Protected and only logged in users should be able to visit
+//   - Users can only edit trips that they own
