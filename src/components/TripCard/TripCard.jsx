@@ -21,6 +21,9 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
     variant === "upcoming" ? "upcoming__trip-dates" : "trip-card__dates";
   const tripLocationClass =
     variant === "upcoming" ? "upcoming__location" : "trip-card__location";
+  const tripEditButtonClass =
+    variant === "upcoming" ? "upcoming__edit-button" : "trip-card__edit-button";
+
   const tripDeleteButtonClass =
     variant === "upcoming"
       ? "upcoming__delete-button"
@@ -51,27 +54,40 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
         <h3 className={tripNameClass}>{trip.name}</h3>
         <div className={infoClass}>
           <p className={tripDatesClass}>{formattedDates}</p>
-          {/* {variant === "upcoming" && (
-            <p className="upcoming__info-divider">|</p>
-          )} */}
           <p className={tripLocationClass}>{trip.location}</p>
         </div>
         {variant !== "upcoming" && (
+          <div className="trip-card__button-container">
+            <button
+              className={tripEditButtonClass}
+              // onClick={() => handleDeleteTrip(trip)}
+            >
+              EDIT
+            </button>
+            <button
+              className={tripDeleteButtonClass}
+              onClick={() => handleDeleteTrip(trip)}
+            >
+              DELETE
+            </button>
+          </div>
+        )}
+      </div>
+      {variant === "upcoming" && (
+        <div className="upcoming__button-container">
+          <button
+            className={tripEditButtonClass}
+            // onClick={() => handleDeleteTrip(trip)}
+          >
+            EDIT
+          </button>
           <button
             className={tripDeleteButtonClass}
             onClick={() => handleDeleteTrip(trip)}
           >
             DELETE
           </button>
-        )}
-      </div>
-      {variant === "upcoming" && (
-        <button
-          className={tripDeleteButtonClass}
-          onClick={() => handleDeleteTrip(trip)}
-        >
-          DELETE
-        </button>
+        </div>
       )}
     </li>
   );

@@ -44,16 +44,33 @@
   color: grey;
 }
 
-.trip-card__delete-button {
+.trip-card__button-container {
   visibility: hidden;
   opacity: 0;
-  background-color: transparent;
-  border: none;
-  color: red;
   transition: opacity 1s ease-in;
 }
 
-.trip-card__card:hover .trip-card__delete-button {
+.trip-card__edit-button {
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+
+.trip-card__edit-button:hover {
+  color: #72c8f7;
+}
+
+.trip-card__delete-button {
+  background-color: transparent;
+  border: none;
+  color: black;
+}
+
+.trip-card__delete-button:hover {
+  color: red;
+}
+
+.trip-card__card:hover .trip-card__button-container {
   visibility: visible;
   opacity: 1;
   cursor: pointer;
