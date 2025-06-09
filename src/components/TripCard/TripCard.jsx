@@ -7,6 +7,10 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   // Conditional classes for "Upcoming" or default variant
   const cardClass =
     variant === "upcoming" ? "upcoming__card" : "trip-card__card";
+  const imageContainerClass =
+    variant === "upcoming"
+      ? "upcoming__image-container"
+      : "trip-card__image-container";
   const imageClass =
     variant === "upcoming" ? "upcoming__image" : "trip-card__image";
   const infoContainerClass =
@@ -44,12 +48,14 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   };
   return (
     <li className={cardClass} key={trip._id}>
-      <img
-        src={imageSrc}
-        alt={trip.name}
-        className={imageClass}
-        onError={handleImageError}
-      />
+      <div className={imageContainerClass}>
+        <img
+          src={imageSrc}
+          alt={trip.name}
+          className={imageClass}
+          onError={handleImageError}
+        />
+      </div>
       <div className={infoContainerClass}>
         <h3 className={tripNameClass}>{trip.name}</h3>
         <div className={infoClass}>
