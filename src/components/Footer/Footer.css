@@ -15,7 +15,7 @@
 
 .footer__button {
   font-size: 24px;
-  padding: 10px;
+  padding: 10px 20px;
   color: white;
   background-color: black;
   border-radius: 12px;
@@ -27,6 +27,7 @@
 }
 
 .footer__update-button:hover {
+  color: black;
   background-color: #72c8f7;
 }
 

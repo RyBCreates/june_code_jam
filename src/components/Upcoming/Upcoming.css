@@ -32,7 +32,7 @@
   overflow: hidden;
   box-shadow: 5px 10px 20px 2px rgb(0 0 0 / 40%);
   scale: 100%;
-  transition: 0.5s linear;
+  transition: scale 0.5s ease-in-out;
 }
 
 .upcoming__card:hover {
@@ -67,16 +67,15 @@
 
 .upcoming__info {
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   font-size: 24px;
 }
 
-.upcoming__start-date {
+.upcoming__trip-dates {
   margin: 0;
-}
-
-.upcoming__end-date {
-  margin: 0;
+  font-size: 24px;
 }
 
 .upcoming__info-divider {
@@ -85,6 +84,21 @@
 
 .upcoming__location {
   margin: 0;
+}
+
+.upcoming__delete-button {
+  visibility: hidden;
+  opacity: 0;
+  background-color: transparent;
+  border: none;
+  color: red;
+  transition: opacity 1s ease-in;
+}
+
+.upcoming__card:hover .upcoming__delete-button {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .upcoming__new-plan-button {

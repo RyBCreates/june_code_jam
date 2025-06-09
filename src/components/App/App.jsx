@@ -232,7 +232,11 @@ function App() {
               <Route
                 path="/"
                 element={
-                  <Home handleNewTripClick={handleNewTripClick} trips={trips} />
+                  <Home
+                    handleNewTripClick={handleNewTripClick}
+                    trips={trips}
+                    handleDeleteTrip={handleDeleteTrip}
+                  />
                 }
               />
 
