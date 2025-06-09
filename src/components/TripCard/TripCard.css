@@ -9,6 +9,14 @@
   justify-content: space-between;
 }
 
+.trip-card__info-container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: center;
+}
+
 .trip-card__card:hover {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -16,7 +24,6 @@
 
 .trip-card__info {
   text-align: left;
-  padding: 20px;
 }
 
 .trip-card__name {
@@ -37,6 +44,18 @@
 }
 
 .trip-card__delete-button {
+  visibility: hidden;
+  opacity: 0;
+  background-color: transparent;
+  border: none;
+  color: red;
+  transition: opacity 1s;
+}
+
+.trip-card__card:hover .trip-card__delete-button {
+  visibility: visible;
+  opacity: 1;
+  cursor: pointer;
 }
 
 .trip-card__image {

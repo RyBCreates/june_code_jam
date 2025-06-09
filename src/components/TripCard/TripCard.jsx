@@ -16,12 +16,14 @@ function TripCard({ trip, handleDeleteTrip }) {
     setImageSrc(getFallbackImage(trip.travel));
   };
   return (
-    <li className="trip-card__card" key="trip1">
-      <div className="trip-card__info">
-        <h3 className="trip-card__name">{trip.name}</h3>
-        <p className="trip-card__dates">{formattedDates}</p>
+    <li className="trip-card__card" key={trip._id}>
+      <div className="trip-card__info-container">
+        <div className="trip-card__info">
+          <h3 className="trip-card__name">{trip.name}</h3>
+          <p className="trip-card__dates">{formattedDates}</p>
 
-        <p className="trip-card__location">{trip.location}</p>
+          <p className="trip-card__location">{trip.location}</p>
+        </div>
         <button
           className="trip-card__delete-button"
           onClick={() => {

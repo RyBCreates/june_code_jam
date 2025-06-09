@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { HashRouter, Routes, Route } from "react-router-dom";
 import { getTrips, addTrip, deleteTrip, updateProfile } from "../../utils/api";
 import { register, login, checkToken } from "../../utils/auth";
@@ -9,6 +9,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Trips from "../Trips/Trips";
 import Calendar from "../Calendar/Calendar";
 import About from "../About/About";
+import Footer from "../Footer/Footer";
 import RegisterModal from "../Modals/RegisterModal/RegisterModal";
 import LoginModal from "../Modals/LoginModal/LoginModal";
 import NewTripModal from "../Modals/NewTripModal/NewTripModal";
@@ -75,11 +76,16 @@ function App() {
       });
   };
 
-  //LogOut
+  //Log Out Current User
   const handleLogout = () => {
     localStorage.removeItem("jwt");
     setIsLoggedIn(false);
     setCurrentUser(null);
+  };
+
+  // Update User
+  const handleUpdateProfileClick = () => {
+    setActiveModal("update-profile");
   };
 
   const updateUser = ({ name }) => {
@@ -247,6 +253,10 @@ function App() {
               <Route path="/Calendar" element={<Calendar />} />
               <Route path="/about" element={<About />} />
             </Routes>
+            <Footer
+              handleLogout={handleLogout}
+              handleUpdateProfileClick={handleUpdateProfileClick}
+            />
           </div>
           <RegisterModal
             activeModal={activeModal}
