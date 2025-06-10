@@ -10,6 +10,7 @@ import Trips from "../Trips/Trips";
 import MyCalendar from "../Calendar/Calendar";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
+import TripEditor from "../TripEditor/TripEditor";
 import RegisterModal from "../Modals/RegisterModal/RegisterModal";
 import LoginModal from "../Modals/LoginModal/LoginModal";
 import NewTripModal from "../Modals/NewTripModal/NewTripModal";
@@ -212,6 +213,14 @@ function App() {
       });
   };
 
+  //Edit a Trip - (Open Trip Editor)
+  const [selectedTrip, setSelectedTrip] = useState({});
+
+  const handleTripClick = (trip) => {
+    setActiveModal("trip-editor");
+    setSelectedTrip(trip);
+  };
+
   return (
     <HashRouter>
       <CurrentUserContext.Provider
@@ -240,22 +249,31 @@ function App() {
                   />
                 }
               />
-
               <Route
                 path="/trips"
                 element={
                   <ProtectedRoute
                     element={Trips}
                     isLoggedIn={isLoggedIn}
-                    handleNewTripClick={handleNewTripClick} // onCardClick={handleCardClick}
+                    handleNewTripClick={handleNewTripClick}
                     trips={trips}
                     handleDeleteTrip={handleDeleteTrip}
-                    // handleLogout={handleLogout}
-                    // handleEditProfileClick={handleEditProfileClick}
                   />
                 }
               />
               <Route
+
+                path="/trip-editor/:tripId"
+                element={
+                  <ProtectedRoute
+                    element={TripEditor}
+                    isLoggedIn={isLoggedIn}
+                    handleDeleteTrip={handleDeleteTrip}
+                  />
+                }
+              />
+              <Route path="/calendar" element={<Calendar />} />
+
                 path="/MyCalendar"
                 element={<MyCalendar trips={trips} />}
               />

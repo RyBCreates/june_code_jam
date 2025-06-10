@@ -3,6 +3,7 @@ import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./Calendar.css";
 
+
 function MyCalendar({ trips }) {
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState(() => {
