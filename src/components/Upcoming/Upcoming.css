@@ -140,9 +140,12 @@
   background-color: black;
   color: white;
   font-size: 30px;
+  border: none;
 }
 
 .upcoming__new-plan-button:hover {
-  opacity: 0.8;
+  color: black;
+  background-color: #72c8f7;
+
   cursor: pointer;
 }

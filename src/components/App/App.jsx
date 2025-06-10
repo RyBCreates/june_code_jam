@@ -7,7 +7,7 @@ import Header from "../Header/Header";
 import Home from "../Home/Home";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Trips from "../Trips/Trips";
-import MyCalendar from "../Calendar/Calendar";
+import TripCalendar from "../TripCalendar/TripCalendar";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import TripEditor from "../TripEditor/TripEditor";
@@ -262,7 +262,6 @@ function App() {
                 }
               />
               <Route
-
                 path="/trip-editor/:tripId"
                 element={
                   <ProtectedRoute
@@ -272,10 +271,9 @@ function App() {
                   />
                 }
               />
-              <Route path="/calendar" element={<Calendar />} />
-
-                path="/MyCalendar"
-                element={<MyCalendar trips={trips} />}
+              <Route
+                path="/trip-calendar"
+                element={<TripCalendar trips={trips} />}
               />
               <Route path="/about" element={<About />} />
             </Routes>

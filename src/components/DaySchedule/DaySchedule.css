@@ -96,6 +96,8 @@
 }
 
 .day-schedule__event-info-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .day-schedule__event-location-container {
@@ -120,7 +122,6 @@
 .day-schedule__event-notes-container {
   margin-top: 20px;
   display: flex;
-  flex-direction: column;
   gap: 15px;
 }
 
