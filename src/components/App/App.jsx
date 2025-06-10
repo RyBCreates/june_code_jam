@@ -262,7 +262,6 @@ function App() {
                 }
               />
               <Route
-
                 path="/trip-editor/:tripId"
                 element={
                   <ProtectedRoute
@@ -272,11 +271,11 @@ function App() {
                   />
                 }
               />
-              <Route path="/calendar" element={<Calendar />} />
-
+              <Route
                 path="/MyCalendar"
                 element={<MyCalendar trips={trips} />}
               />
+
               <Route path="/about" element={<About />} />
             </Routes>
             <Footer
