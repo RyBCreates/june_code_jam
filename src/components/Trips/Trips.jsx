@@ -7,7 +7,7 @@ function Trips({ handleNewTripClick, trips, handleDeleteTrip }) {
   const { currentUser } = useContext(CurrentUserContext);
 
   return (
-    <div className="trips">
+    <div className="trips app__section">
       <h2 className="trips__title">{currentUser?.name || "Your"}'s Trips</h2>
       <ul className="trips__cards">
         {trips.map((trip) => {

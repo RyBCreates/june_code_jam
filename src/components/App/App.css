@@ -7,3 +7,7 @@
   background-color: white;
   line-height: 1;
 }
+
+.app__section {
+  padding: 40px;
+}

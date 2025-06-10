@@ -6,7 +6,7 @@ function Footer({ handleUpdateProfileClick }) {
   const { currentUser, handleLogout } = useContext(CurrentUserContext);
 
   return (
-    <footer className="footer">
+    <footer className="footer ">
       {currentUser ? (
         <div className="footer__profile-buttons">
           <button

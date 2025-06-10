@@ -48,7 +48,7 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   };
   return (
     <li className={cardClass} key={trip._id}>
-      <Link to="trip-editor" className={cardLinkClass}>
+      <Link to={`/trip-editor/${trip._id}`} className={cardLinkClass}>
         <div className={imageContainerClass}>
           <img
             src={imageSrc}
