@@ -23,7 +23,7 @@
   flex-direction: column;
   justify-content: left;
   align-items: left;
-  gap: 10px;
+  gap: 15px;
 }
 
 .scheduler__input {
@@ -33,8 +33,21 @@
 }
 
 .scheduler__button {
+  font-size: 24px;
   padding: 20px 40px;
   color: white;
   background-color: black;
   border-radius: 12px;
+  border: none;
+  box-shadow: 10px 10px 20px 1px rgb(0 0 0 / 40%);
+  scale: 100%;
+  transition: 0.2s ease-in-out;
+}
+
+.scheduler__button:hover {
+  scale: 101%;
+  cursor: pointer;
+  color: black;
+  background-color: #fff;
+  box-shadow: 10px 10px 40px 8px rgb(0 0 0 / 40%);
 }

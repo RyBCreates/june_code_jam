@@ -13,8 +13,8 @@ function Scheduler() {
               type="text"
               id="event-name"
               placeholder="Go to Lunch"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              //   value={name}
+              //   onChange={(e) => setName(e.target.value)}
             ></input>
           </label>
         </div>
@@ -28,8 +28,8 @@ function Scheduler() {
               type="text"
               id="event-address"
               placeholder="123 Main St."
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              //   value={name}
+              //   onChange={(e) => setName(e.target.value)}
             ></input>
           </label>
         </div>
@@ -42,8 +42,8 @@ function Scheduler() {
               type="text"
               id="event-start-time"
               placeholder="11:00 AM"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              //   value={name}
+              //   onChange={(e) => setName(e.target.value)}
             ></input>
           </label>
         </div>
@@ -56,13 +56,13 @@ function Scheduler() {
               type="text"
               id="event-end-time"
               placeholder="12:00 PM"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              //   value={name}
+              //   onChange={(e) => setName(e.target.value)}
             ></input>
           </label>
         </div>
         <button className="scheduler__button" type="submit">
-          Add to Day
+          Add to Schedule
         </button>
       </form>
     </div>

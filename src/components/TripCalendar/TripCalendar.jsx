@@ -33,7 +33,7 @@ function TripCalendar({ trips }) {
   };
 
   return (
-    <div className="calendar-wrapper">
+    <div className="trip-calendar app__section">
       <h2 className="calendar-title"> Travel Calendar</h2>
       <Calendar
         onChange={setDate}
