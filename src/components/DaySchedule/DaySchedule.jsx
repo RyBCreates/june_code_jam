@@ -31,7 +31,12 @@ function DaySchedule() {
             </h3>
           </div>
           <div className="day-schedule__event-container">
-            <h3 className="day-schedule__event-title">Arrive in Paris</h3>
+            <div className="day-schedule__header">
+              <h3 className="day-schedule__event-title">Arrive in Paris</h3>
+              <button className="day-schedule__add-note-button" type="button">
+                Add Note
+              </button>
+            </div>
             <div className="day-schedule__event-info-container">
               <div className="day-schedule__event-location-container">
                 <img
@@ -60,7 +65,12 @@ function DaySchedule() {
             </h3>
           </div>
           <div className="day-schedule__event-container">
-            <h3 className="day-schedule__event-title">Eiffel Tower</h3>
+            <div className="day-schedule__header">
+              <h3 className="day-schedule__event-title">Eiffel Tower</h3>
+              <button className="day-schedule__add-note-button" type="button">
+                Add Note
+              </button>
+            </div>{" "}
             <div className="day-schedule__event-info-container">
               <div className="day-schedule__event-location-container">
                 <img
