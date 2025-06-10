@@ -13,7 +13,7 @@ function Navbar() {
           <li className="navbar__link">Trips</li>
         </NavLink>
 
-        <NavLink to="/calendar" className="navbar__link-calendar">
+        <NavLink to="/MyCalendar" className="navbar__link-calendar">
           <li className="navbar__link">Calendar</li>
         </NavLink>
 
