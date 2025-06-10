@@ -23,7 +23,13 @@ function DaySchedule() {
       </div>
       <ul className="day-schedule__event-cards">
         <li className="day-schedule__event-card">
-          <h3 className="day-schedule__time">9:00 AM</h3>
+          <div className="day-schedule__duration">
+            <h3 className="day-schedule__time">
+              <span className="day-schedule__start-time">9:00 AM</span>
+              <span className="day-schedule__time-divider" />
+              <span className="day-schedule__end-time">10:00 AM</span>
+            </h3>
+          </div>
           <div className="day-schedule__event-container">
             <h3 className="day-schedule__event-title">Arrive in Paris</h3>
             <div className="day-schedule__event-info-container">
@@ -46,7 +52,13 @@ function DaySchedule() {
           </div>
         </li>
         <li className="day-schedule__event-card">
-          <h3 className="day-schedule__time">11:00 AM</h3>
+          <div className="day-schedule__duration">
+            <h3 className="day-schedule__time">
+              <span className="day-schedule__start-time">10:00 AM</span>
+              <span className="day-schedule__time-divider" />
+              <span className="day-schedule__end-time">12:00 AM</span>
+            </h3>
+          </div>
           <div className="day-schedule__event-container">
             <h3 className="day-schedule__event-title">Eiffel Tower</h3>
             <div className="day-schedule__event-info-container">

@@ -36,6 +36,10 @@
 .weekly-schedule__tile {
   border: 1px solid grey;
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .weekly-schedule__tile-date-container {
@@ -56,12 +60,48 @@
 .weekly-schedule__tile-schedule-container {
   display: flex;
   flex-direction: column;
-  font-size: 24px;
+  justify-content: space-between;
+  height: 200px;
   padding: 10px;
+  font-size: 24px;
+}
+
+.weekly-schedule__tile-events {
+  list-style: none;
+  padding: 0;
 }
 
 .weekly-schedule__tile-event {
   display: flex;
   text-wrap: nowrap;
   justify-content: center;
+}
+
+.weekly-schedule__tile-time {
+  font-weight: 700;
+  margin: 0;
+}
+
+.weekly-schedule__tile-title {
+  margin: 0;
+  padding-left: 8px;
+  font-size: 22px;
+  flex-grow: 1;
+}
+
+.weekly-schedule__tile-notes {
+  padding: 0;
+}
+
+.weekly-schedule__tile-note {
+  list-style: none;
+}
+
+.weekly-schedule__note {
+  font-size: 18px;
+  color: #333;
+  margin-top: auto;
+  background-color: rgb(184, 184, 184);
+  padding: 6px 8px;
+  border-radius: 6px;
 }
