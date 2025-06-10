@@ -30,10 +30,12 @@
   grid-template-columns: repeat(5, 1fr);
   padding: 0;
   margin: 0;
+  background-color: #72c8f7;
 }
 
 .weekly-schedule__tile {
   border: 1px solid grey;
+  background-color: white;
 }
 
 .weekly-schedule__tile-date-container {

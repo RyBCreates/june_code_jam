@@ -19,17 +19,23 @@
 
 .header__new-plan-button {
   font-size: 32px;
-  width: 200px;
-  height: 60px;
   border: none;
   background-color: black;
   color: white;
-  border-radius: 5px;
+  border-radius: 12px;
+  padding: 20px 40px;
+  border-radius: 12px;
+  box-shadow: 10px 10px 20px 1px rgb(0 0 0 / 40%);
+  scale: 100%;
+  transition: 0.2s ease-in-out;
 }
 
 .header__new-plan-button:hover {
-  opacity: 0.8;
+  scale: 101%;
   cursor: pointer;
+  color: black;
+  background-color: #fff;
+  box-shadow: 10px 10px 40px 8px rgb(0 0 0 / 40%);
 }
 
 .header__auth-buttons {
