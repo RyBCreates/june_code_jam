@@ -7,7 +7,7 @@ import Header from "../Header/Header";
 import Home from "../Home/Home";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 import Trips from "../Trips/Trips";
-import Calendar from "../Calendar/Calendar";
+import MyCalendar from "../Calendar/Calendar";
 import About from "../About/About";
 import Footer from "../Footer/Footer";
 import RegisterModal from "../Modals/RegisterModal/RegisterModal";
@@ -255,7 +255,10 @@ function App() {
                   />
                 }
               />
-              <Route path="/Calendar" element={<Calendar />} />
+              <Route
+                path="/MyCalendar"
+                element={<MyCalendar trips={trips} />}
+              />
               <Route path="/about" element={<About />} />
             </Routes>
             <Footer
