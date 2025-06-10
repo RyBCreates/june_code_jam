@@ -1,30 +1,30 @@
-.single-day {
+.day-schedule {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: left;
-  padding: 40px;
+  width: 100%;
 }
 
-.single-day__header {
+.day-schedule__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 30px;
 }
 
-.single-day__date {
+.day-schedule__date {
   font-size: 42px;
   margin: 0;
 }
 
-.single-day__button-container {
+.day-schedule__button-container {
   display: flex;
   align-items: center;
   gap: 12px;
 }
 
-.single-day__left-arrow {
+.day-schedule__left-arrow {
   width: 48px;
   background-color: transparent;
   border: none;
@@ -32,11 +32,11 @@
   cursor: pointer;
 }
 
-.single-day__left-arrow:hover {
+.day-schedule__left-arrow:hover {
   opacity: 0.6;
 }
 
-.single-day__calendar {
+.day-schedule__calendar {
   width: 48px;
   background-color: transparent;
   border: none;
@@ -44,11 +44,11 @@
   cursor: pointer;
 }
 
-.single-day__calendar:hover {
+.day-schedule__calendar:hover {
   opacity: 0.6;
 }
 
-.single-day__right-arrow {
+.day-schedule__right-arrow {
   width: 48px;
   background-color: transparent;
   border: none;
@@ -56,11 +56,11 @@
   cursor: pointer;
 }
 
-.single-day__right-arrow:hover {
+.day-schedule__right-arrow:hover {
   opacity: 0.6;
 }
 
-.single-day__event-cards {
+.day-schedule__event-cards {
   list-style: none;
   border: 1px solid grey;
   border-radius: 30px;
@@ -68,7 +68,7 @@
   margin: 0;
 }
 
-.single-day__event-card {
+.day-schedule__event-card {
   padding: 20px;
   display: flex;
   align-items: flex-start;
@@ -76,35 +76,35 @@
   margin: 0 25px;
 }
 
-.single-day__event-card:last-of-type {
+.day-schedule__event-card:last-of-type {
   border-bottom: none;
 }
 
-.single-day__time {
+.day-schedule__time {
   font-size: 32px;
   margin: 0 20px 0 0;
   align-self: center;
 }
 
-.single-day__event-container {
+.day-schedule__event-container {
 }
 
-.single-day__event-title {
+.day-schedule__event-title {
   margin: 0 0 10px 0;
   border-bottom: 1px solid grey;
   font-size: 40px;
 }
 
-.single-day__event-info-container {
+.day-schedule__event-info-container {
 }
 
-.single-day__event-location-container {
+.day-schedule__event-location-container {
   display: flex;
   justify-content: left;
   align-items: center;
 }
 
-.single-day__location-icon {
+.day-schedule__location-icon {
   width: 40px;
   aspect-ratio: 1;
   margin-right: 10px;
@@ -112,19 +112,19 @@
   background-color: transparent;
 }
 
-.single-day__location-address {
+.day-schedule__location-address {
   font-size: 36px;
   margin: 0;
 }
 
-.single-day__event-notes-container {
+.day-schedule__event-notes-container {
   margin-top: 20px;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.single-day__event-note {
+.day-schedule__event-note {
   font-size: 32px;
   margin: 0;
   padding: 10px 25px;

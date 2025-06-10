@@ -1,13 +1,23 @@
+import { useContext } from "react";
 import TripCard from "../TripCard/TripCard";
 import "./Trips.css";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Trips({ handleNewTripClick, trips }) {
+function Trips({ handleNewTripClick, trips, handleDeleteTrip }) {
+  const { currentUser } = useContext(CurrentUserContext);
+
   return (
-    <div className="trips">
-      <h2 className="trips__title">Your Trips</h2>
+    <div className="trips app__section">
+      <h2 className="trips__title">{currentUser?.name || "Your"}'s Trips</h2>
       <ul className="trips__cards">
         {trips.map((trip) => {
-          return <TripCard key={trip._id} trip={trip} />;
+          return (
+            <TripCard
+              key={trip._id}
+              trip={trip}
+              handleDeleteTrip={handleDeleteTrip}
+            />
+          );
         })}
         <li
           className="trips__card trips__new-card"
@@ -15,15 +25,6 @@ function Trips({ handleNewTripClick, trips }) {
         >
           <span className="trips__plus-icon">＋</span>
           <p className="trips__card-text">New Trip</p>
-        </li>
-
-        <li className="trips__card" key="trip2">
-          <div className="trips__info">
-            <h3 className="trips__name">Paris</h3>
-            <p className="trips__dates">Apr 15th-20th</p>
-            <p className="trips__location">Paris, France</p>
-          </div>
-          <img src={null} alt="trip name" className="trips__image" />
         </li>
       </ul>
     </div>

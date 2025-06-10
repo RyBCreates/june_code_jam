@@ -1,12 +1,16 @@
 import Upcoming from "../Upcoming/Upcoming";
-import SingleDay from "../SingleDay/SingleDay";
+import DaySchedule from "../DaySchedule/DaySchedule";
 import "./Home.css";
 
-function Home({ handleNewTripClick }) {
+function Home({ handleNewTripClick, trips, handleDeleteTrip }) {
   return (
-    <div className="Home">
-      <Upcoming handleNewTripClick={handleNewTripClick} />
-      <SingleDay />
+    <div className="Home app__section">
+      <Upcoming
+        handleNewTripClick={handleNewTripClick}
+        trips={trips}
+        handleDeleteTrip={handleDeleteTrip}
+      />
+      <DaySchedule />
     </div>
   );
 }

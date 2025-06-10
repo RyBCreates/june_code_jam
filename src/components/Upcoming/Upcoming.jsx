@@ -1,56 +1,26 @@
-import Airplane from "../../assets/travel-icons/airplane.png";
-import Car from "../../assets/travel-icons/car.png";
+import { useContext } from "react";
+import TripCard from "../TripCard/TripCard";
 import "./Upcoming.css";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Upcoming({ handleNewTripClick }) {
+function Upcoming({ handleNewTripClick, trips, handleDeleteTrip }) {
+  const { currentUser } = useContext(CurrentUserContext);
   return (
     <div className="upcoming">
-      <h2 className="upcoming__title">Upcoming Trips</h2>
+      <h2 className="upcoming__title">
+        Upcoming Trips for {currentUser?.name || "You"}
+      </h2>
       <ul className="upcoming__cards-list">
-        <li className="upcoming__card">
-          <img
-            className="upcoming__image"
-            src={Airplane}
-            alt="airplane-icon"
-          ></img>
-          {/* Credit for Airplane Icon: https://icons8.com/icon/2487/airplane-take-off */}
-          <div className="upcoming__trip-container">
-            <h3 className="upcoming__trip-name">Paris Trip</h3>
-            <div className="upcoming__info">
-              <p className="upcoming__dates">Apr 15-20</p>
-              <p className="upcoming__info-divider">|</p>
-              <p className="upcoming__location">France</p>
-            </div>
-          </div>
-        </li>
-        <li className="upcoming__card">
-          <img className="upcoming__image" src={Car} alt="car-icon"></img>
-          {/* Credit for Car Icon:  https://icons8.com/icon/16690/sedan */}
-          <div className="upcoming__trip-container">
-            <h3 className="upcoming__trip-name">New York Here We Come</h3>
-            <div className="upcoming__info">
-              <p className="upcoming__dates">Nov 10th - Nov 20th</p>
-              <p className="upcoming__info-divider">|</p>
-              <p className="upcoming__location">New York City, New York</p>
-            </div>
-          </div>
-        </li>
-        <li className="upcoming__card">
-          <img
-            className="upcoming__image"
-            src={Airplane}
-            alt="airplane-icon"
-          ></img>
-          {/* Credit for Airplane Icon: <a target="_blank" href="https://icons8.com/icon/2487/airplane-take-off">Airplane</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> */}
-          <div className="upcoming__trip-container">
-            <h3 className="upcoming__trip-name">Mexico</h3>
-            <div className="upcoming__info">
-              <p className="upcoming__dates">June 15th - June 18th</p>
-              <p className="upcoming__info-divider">|</p>
-              <p className="upcoming__location">Playa Del Carmen</p>
-            </div>
-          </div>
-        </li>
+        {trips.map((trip) => {
+          return (
+            <TripCard
+              variant="upcoming"
+              key={trip._id}
+              trip={trip}
+              handleDeleteTrip={handleDeleteTrip}
+            />
+          );
+        })}
       </ul>
       <button
         className="upcoming__new-plan-button"
