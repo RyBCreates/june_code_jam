@@ -3,9 +3,9 @@ import Inzira from "../../assets/Inzira.png";
 
 function About() {
   return (
-    <div className="about">
+    <div className="about app__section">
       <section className="about-app">
-        <h1 className="about-app__title">What This App Is About</h1>
+        <h2 className="about-app__title">What This App Is About</h2>
         <p className="about-app__content">
           This app helps users plan and organize upcoming trips by creating
           visual, interactive calendars. Whether you're a meticulous planner or
@@ -14,7 +14,7 @@ function About() {
         </p>
       </section>
       <section className="about-team">
-        <h2 className="about-team__title"> About Authors </h2>
+        <h2 className="about-team__title"> Meet "The Itinerarians" </h2>
         <ul className="cards">
           <li className="card">
             <img className="card__img" src="" alt="Ryan Bommarito" />
@@ -71,3 +71,12 @@ export default About;
 
 // location tag icon link
 // <a target="_blank" href="https://icons8.com/icon/85049/location">Location Pin</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
+
+//TODO
+
+// FavIcon
+// Log In and Register - Styled
+// Log in and Register Modals styling needs fixed
+// - Switching of Modals doesn't work yet
+
+//Avery - Add picture and about paragraph

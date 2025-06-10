@@ -1,5 +1,8 @@
-.calendar-wrapper {
-  width: 100%;
+.calendar-title {
+  margin: 40px 0 30px;
+  padding-bottom: 5px;
+  font-size: 42px;
+  border-bottom: 1px solid black;
 }
 
 .calendar-trip-names {

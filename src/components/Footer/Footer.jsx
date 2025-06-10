@@ -27,9 +27,7 @@ function Footer({ handleUpdateProfileClick }) {
       ) : (
         <></>
       )}
-      <p className="footer__copyright">
-        Copyright 2025 - Ryan Bommarito and Avery Walker
-      </p>
+      <p className="footer__copyright">Copyright 2025 - "The Itinerarians"</p>
     </footer>
   );
 }
