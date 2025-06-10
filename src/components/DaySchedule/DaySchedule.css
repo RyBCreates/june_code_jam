@@ -69,9 +69,9 @@
 }
 
 .day-schedule__event-card {
-  padding: 20px;
+  padding: 20px 0;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   border-bottom: 3px solid grey;
   margin: 0 25px;
 }
@@ -80,19 +80,69 @@
   border-bottom: none;
 }
 
+.day-schedule__duration {
+  width: 12%;
+  margin-right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .day-schedule__time {
-  font-size: 32px;
-  margin: 0 20px 0 0;
-  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  line-height: 1.2;
+}
+.day-schedule__start-time {
+  color: black;
+  font-weight: 700;
+}
+
+.day-schedule__time-divider {
+  width: 30px;
+  height: 1px;
+  background-color: gray;
+  margin: 6px 0;
+}
+
+.day-schedule__end-time {
+  color: grey;
+  font-size: 20px;
 }
 
 .day-schedule__event-container {
+  width: 100%;
+}
+
+.day-schedule__header {
+  border-bottom: 1px solid grey;
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .day-schedule__event-title {
-  margin: 0 0 10px 0;
-  border-bottom: 1px solid grey;
+  margin: 0;
   font-size: 40px;
+}
+
+.day-schedule__add-note-button {
+  background-color: transparent;
+  color: black;
+  border: none;
+  visibility: hidden;
+}
+
+.day-schedule__add-note-button:hover {
+  color: #72c8f7;
+  cursor: pointer;
+}
+
+.day-schedule__event-card:hover .day-schedule__add-note-button {
+  visibility: visible;
 }
 
 .day-schedule__event-info-container {

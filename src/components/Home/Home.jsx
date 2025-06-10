@@ -4,7 +4,7 @@ import "./Home.css";
 
 function Home({ handleNewTripClick, trips, handleDeleteTrip }) {
   return (
-    <div className="Home app__section">
+    <div className="home app__section">
       <Upcoming
         handleNewTripClick={handleNewTripClick}
         trips={trips}
