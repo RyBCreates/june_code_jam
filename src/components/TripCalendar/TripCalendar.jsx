@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import "./Calendar.css";
+import "./TripCalendar.css";
 
-
-function MyCalendar({ trips }) {
+function TripCalendar({ trips }) {
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState(() => {
     const savedNotes = localStorage.getItem("calendarNotes");
@@ -65,4 +64,4 @@ function MyCalendar({ trips }) {
   );
 }
 
-export default MyCalendar;
+export default TripCalendar;
