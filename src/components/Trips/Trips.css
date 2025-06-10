@@ -81,3 +81,9 @@
   object-fit: cover;
   background-color: #72c8f7;
 }
+
+@media screen and (max-width: 627px) {
+  .trips__card {
+    height: 20%;
+  }
+}

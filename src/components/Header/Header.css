@@ -13,16 +13,36 @@
   color: rgb(48, 106, 52);
 }
 
+.header__button {
+  font-size: 25px;
+  width: 100px;
+  height: 60px;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
+}
+
+.header__button:nth-of-type(2) {
+  margin-left: 8px;
+}
+
 .header__new-plan-button {
   font-size: 32px;
   width: 200px;
   height: 60px;
-  background-color: black;
-  color: white;
-  border-radius: 5px;
+  background-color: white;
+  color: black;
+  border-radius: 15px;
 }
 
 .header__new-plan-button:hover {
   opacity: 0.8;
   cursor: pointer;
+}
+
+@media screen and (max-width: 627px) {
+  .header {
+    display: flex;
+    flex-direction: column;
+  }
 }
