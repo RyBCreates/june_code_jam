@@ -1,9 +1,48 @@
 import "./About.css";
+import Inzira from "../../assets/Inzira.png";
 
 function About() {
   return (
     <div className="about">
-      <h1>THIS IS THE ABOUT SECTION</h1>
+      <section className="about-app">
+        <h1 className="about-app__title">What This App Is About</h1>
+        <p className="about-app__content">
+          This app helps users plan and organize upcoming trips by creating
+          visual, interactive calendars. Whether you're a meticulous planner or
+          just want a quick view of your itineraries, it's built to make trip
+          planning fun and collaborative.
+        </p>
+      </section>
+      <section className="about-team">
+        <h2 className="about-team__title"> About Authors </h2>
+        <ul className="cards">
+          <li className="card">
+            <img className="card__img" src="" alt="Ryan Bommarito" />
+            <div className="card__content">
+              <h3 className="card__author">Ryan Bommarito</h3>
+              <p className="card__description">About Ryan</p>
+            </div>
+          </li>
+          <li className="card">
+            <img className="card__img" src={Inzira} alt="Inzira Abdurafikova" />
+            <div className="card__content">
+              <h3 className="card__author">Inzira Abdurafikova</h3>
+              <p className="card__description">
+                Always curious and excited to grow. I help shape the frontend
+                and user flow while collaborating closely with the team. Big fan
+                of good design, clean code, and a cup of coffee while debugging.
+              </p>
+            </div>
+          </li>
+          <li className="card">
+            <img className="card__img" src="" alt="Avery Walker" />
+            <div className="card__content">
+              <h3 className="card__author">Avery Walker</h3>
+              <p className="card__description">About Avery</p>
+            </div>
+          </li>
+        </ul>
+      </section>
     </div>
   );
 }
