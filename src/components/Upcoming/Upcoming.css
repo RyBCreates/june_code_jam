@@ -149,3 +149,16 @@
 
   cursor: pointer;
 }
+
+@media screen and (max-width: 479px) {
+  .upcoming {
+    text-align: center;
+  }
+
+  .upcoming__new-plan-button {
+    display: flex;
+    align-content: center;
+    max-width: 80vw;
+    justify-content: center;
+  }
+}

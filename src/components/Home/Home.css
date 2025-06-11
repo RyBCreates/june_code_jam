@@ -1,0 +1,10 @@
+.app__section {
+  background: #fff;
+}
+
+@media screen and (max-width: 479px) {
+  .app__section {
+    width: 100vw;
+
+  }
+}

@@ -39,7 +39,33 @@
 }
 
 .header__auth-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 10px;
 }
 
 .header__button {
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 12px;
+  border: none;
+  background-color: white;
+  color: #72c8f7;
+}
+
+.header__button:last-child {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 479px) {
+  .header {
+    width: 100vw;
+    border-radius: 0;
+  }
+
+  .header__title {
+    margin-right: 10px;
+  }
+
 }
