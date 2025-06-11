@@ -5,16 +5,15 @@ import "./TripEditor.css";
 import { useContext } from "react";
 import CurrentTripContext from "../../contexts/CurrentTripContext";
 
-function TripEditor() {
+function TripEditor({ onAddEvent, events }) {
   const { currentTrip } = useContext(CurrentTripContext);
 
-  console.log("currentTrip:", currentTrip);
   return (
     <div className="trip-editor app__section">
       <h2 className="trip-editor__title">"{currentTrip.name}" - Trip Editor</h2>
       <div className="trip-editor__workspace">
-        <Scheduler />
-        <DaySchedule />
+        <Scheduler onAddEvent={onAddEvent} />
+        <DaySchedule events={events} />
       </div>
       <WeeklySchedule />
     </div>
