@@ -54,6 +54,11 @@
   color: #72c8f7;
 }
 
+.header__button:hover {
+  opacity: 0.5;
+  cursor: pointer;
+}
+
 .header__button:last-child {
   margin-top: 10px;
 }
@@ -67,5 +72,4 @@
   .header__title {
     margin-right: 10px;
   }
-
 }
