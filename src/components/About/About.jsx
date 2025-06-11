@@ -1,6 +1,7 @@
 import "./About.css";
 import Inzira from "../../assets/Inzira.png";
 import Ryan from "../../assets/Ryan-Profile.jpg";
+import Avery from "../../assets/Avery.Profile.PNG";
 
 function About() {
   return (
@@ -19,8 +20,7 @@ function About() {
         <ul className="cards">
           <li className="card">
             <img
-              className="card__img card__img-ryan
-"
+              className="card__img card__img-ryan"
               src={Ryan}
               alt="Ryan Bommarito"
             />
@@ -50,10 +50,20 @@ function About() {
             </div>
           </li>
           <li className="card">
-            <img className="card__img" src="" alt="Avery Walker" />
+            <img
+              className="card__img card__img-avery"
+              src={Avery}
+              alt="Avery Walker"
+            />
             <div className="card__content">
               <h3 className="card__author">Avery Walker</h3>
-              <p className="card__description">About Avery</p>
+              <p className="card__description">
+                Father of two beautiful daughters, with a wife of almost 7
+                years, I have always dreamed of a career in Technology.
+                Currently, I am the Assistant Director of Operations at a
+                growing coffee chain. My focus is to grow into a Full Stack
+                Engineering role after completing this program.
+              </p>
             </div>
           </li>
         </ul>
