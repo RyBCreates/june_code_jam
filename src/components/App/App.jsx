@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { HashRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 import { getTrips, addTrip, deleteTrip, updateProfile } from "../../utils/api";
 import { register, login, checkToken } from "../../utils/auth";
 import "./App.css";
@@ -17,8 +17,12 @@ import NewTripModal from "../Modals/NewTripModal/NewTripModal";
 import ConfirmationModal from "../Modals/ConfirmationModal/ConfirmationModal";
 import EditProfileModal from "../Modals/EditProfileModal/EditProfileModal";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
+import CurrentTripContext from "../../contexts/CurrentTripContext";
 
 function App() {
+  //Use for navigation to Trip Editor
+  const navigate = useNavigate();
+
   //Registration && Login
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
@@ -214,21 +218,27 @@ function App() {
   };
 
   //Edit a Trip - (Open Trip Editor)
-  const [selectedTrip, setSelectedTrip] = useState({});
+  const [currentTrip, setCurrentTrip] = useState({});
 
   const handleTripClick = (trip) => {
-    setActiveModal("trip-editor");
-    setSelectedTrip(trip);
+    setCurrentTrip(trip);
+    navigate(`/trip-editor/${trip._id}`);
   };
 
   return (
-    <HashRouter>
-      <CurrentUserContext.Provider
+    <CurrentUserContext.Provider
+      value={{
+        currentUser,
+        handleLogin,
+        handleLogout,
+        updateUser,
+      }}
+    >
+      <CurrentTripContext.Provider
         value={{
-          currentUser,
-          handleLogin,
-          handleLogout,
-          updateUser,
+          currentTrip,
+          setCurrentTrip,
+          handleTripClick,
         }}
       >
         <div className="app">
@@ -261,6 +271,7 @@ function App() {
                   />
                 }
               />
+
               <Route
                 path="/trip-editor/:tripId"
                 element={
@@ -313,8 +324,8 @@ function App() {
             buttonText="Update Information"
           />
         </div>
-      </CurrentUserContext.Provider>
-    </HashRouter>
+      </CurrentTripContext.Provider>
+    </CurrentUserContext.Provider>
   );
 }
 

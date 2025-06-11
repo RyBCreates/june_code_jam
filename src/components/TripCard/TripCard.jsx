@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { formatTripDates } from "../../utils/dateFormat";
 import { getFallbackImage } from "../../utils/travelIconFallback";
 import "./TripCard.css";
+import CurrentTripContext from "../../contexts/CurrentTripContext";
 
 function TripCard({ variant = "default", trip, handleDeleteTrip }) {
+  const { handleTripClick } = useContext(CurrentTripContext);
+
   // Conditional classes for "Upcoming" or default variant
   const cardClass =
     variant === "upcoming" ? "upcoming__card" : "trip-card__card";
@@ -48,7 +51,11 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
   };
   return (
     <li className={cardClass} key={trip._id}>
-      <Link to={`/trip-editor/${trip._id}`} className={cardLinkClass}>
+      <Link
+        to={`/trip-editor/${trip._id}`}
+        className={cardLinkClass}
+        onClick={() => handleTripClick(trip)}
+      >
         <div className={imageContainerClass}>
           <img
             src={imageSrc}
@@ -90,8 +97,3 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
 }
 
 export default TripCard;
-
-// User Clicks TripCard
-// User is Redirected to Trip Editor
-//   - Trip Editor should be Protected and only logged in users should be able to visit
-//   - Users can only edit trips that they own
