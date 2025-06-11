@@ -1,6 +1,12 @@
 import { useState, useEffect, useContext } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { getTrips, addTrip, deleteTrip, updateProfile } from "../../utils/api";
+import {
+  getTrips,
+  addTrip,
+  deleteTrip,
+  updateProfile,
+  addEvent,
+} from "../../utils/api";
 import { register, login, checkToken } from "../../utils/auth";
 import "./App.css";
 import Header from "../Header/Header";
@@ -225,6 +231,34 @@ function App() {
     navigate(`/trip-editor/${trip._id}`);
   };
 
+  // Add an Event
+  const [events, setEvents] = useState([]);
+
+  const handleAddEventSubmit = (name, startTime, endTime, location) => {
+    const newEvent = {
+      name,
+      startTime,
+      endTime,
+      location,
+    };
+    return addEvent(currentTrip._id, newEvent)
+      .then((addedEvent) => {
+        setEvents([addedEvent, ...events]);
+        return addedEvent;
+      })
+      .catch((error) => {
+        console.error("Error adding event:", error);
+        throw error;
+      });
+  };
+
+  useEffect(() => {
+    if (currentTrip && currentTrip._id) {
+    } else {
+      setEvents([]);
+    }
+  }, [currentTrip]);
+
   return (
     <CurrentUserContext.Provider
       value={{
@@ -279,6 +313,8 @@ function App() {
                     element={TripEditor}
                     isLoggedIn={isLoggedIn}
                     handleDeleteTrip={handleDeleteTrip}
+                    onAddEvent={handleAddEventSubmit}
+                    events={events}
                   />
                 }
               />
