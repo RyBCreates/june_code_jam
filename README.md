@@ -1,12 +1,44 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Travel App
 
-Currently, two official plugins are available:
+A full-stack application that helps users manage their travel plans and add personal notes to each date in a calendar view. The app supports user authentication and saves data securely using MongoDB.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🔗 Live Demo
 
-## Expanding the ESLint configuration
+👉 [Deployed Frontend](https://your-frontend-url.com)  
+👉 [Deployed Backend](https://your-backend-url.com)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Tech Stack
+
+### Frontend
+
+- **React** — UI library
+- **React Calendar** — Calendar component
+- **JWT (stored in localStorage)** — For authentication
+- **Fetch API** — To communicate with backend
+
+### Backend
+
+- **Node.js + Express.js** — Server
+- **MongoDB + Mongoose** — Database
+- **JWT** — Authentication
+
+---
+
+## How to Run Locally
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/RyBCreates/june_code_jam.git
+cd june_code_jam
+npm install
+npm run dev
+```
+
+cd june_code_jam_backend
+npm install
+npm run dev

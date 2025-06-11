@@ -5,20 +5,52 @@ import "./TripCalendar.css";
 
 function TripCalendar({ trips }) {
   const [date, setDate] = useState(new Date());
-  const [notes, setNotes] = useState(() => {
-    const savedNotes = localStorage.getItem("calendarNotes");
-    return savedNotes ? JSON.parse(savedNotes) : {};
-  });
+  const [notes, setNotes] = useState({});
 
   useEffect(() => {
-    localStorage.setItem("calendarNotes", JSON.stringify(notes));
-  }, [notes]);
+    const token = localStorage.getItem("jwt");
+    const dateStr = date.toISOString().split("T")[0];
+
+    if (!token || !dateStr) return;
+
+    fetch(`http://localhost:3001/notes/${dateStr}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    })
+      .then((res) => {
+        if (res.status === 404) {
+          return { text: "" }; // Treat "not found" as an empty note
+        }
+        if (!res.ok) {
+          throw new Error("Fetch failed");
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setNotes((prev) => ({
+          ...prev,
+          [dateStr]: data.text || "",
+        }));
+      })
+      .catch((err) => console.error("Error fetching note:", err));
+  }, [date]);
 
   const handleNoteChange = (e) => {
-    setNotes({
-      ...notes,
-      [date.toDateString()]: e.target.value,
-    });
+    const value = e.target.value;
+    const dateStr = date.toDateString();
+    const token = localStorage.getItem("jwt");
+
+    setNotes((prev) => ({ ...prev, [dateStr]: value }));
+
+    fetch(`http://localhost:3001/notes/${dateStr}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ text: value }),
+    }).catch((err) => console.error("Error saving note:", err));
   };
 
   const getTripsForDate = (selectedDate) => {
@@ -48,7 +80,13 @@ function TripCalendar({ trips }) {
                   {trip.name}
                 </div>
               ))}
-              {note && <div className="calendar-note">{note}</div>}
+              {note && (
+                <div className="calendar-note">
+                  {note.split("\n").map((line, i) => (
+                    <div key={i}>{line}</div>
+                  ))}
+                </div>
+              )}
             </div>
           ) : null;
         }}
@@ -58,7 +96,7 @@ function TripCalendar({ trips }) {
         className="calendar-notes-text"
         value={notes[date.toDateString()] || ""}
         onChange={handleNoteChange}
-        placeholder="Write your notes here... (one per line)"
+        placeholder="Write your notes here... "
       />
     </div>
   );
