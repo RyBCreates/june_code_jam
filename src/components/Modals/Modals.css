@@ -72,6 +72,44 @@
   flex-direction: column;
 }
 
+.modal__button {
+  width: 120px;
+  border-radius: 20px;
+}
+
+.modal__button_type_delete {
+  width: 200px;
+  border-radius: 20px;
+  font-family: "Cabinet";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #ffffff;
+  padding: 8px 16px;
+  border: none;
+  background: #000000;
+  cursor: pointer;
+  margin: 30px 20px 10px;
+}
+
+.modal__button_type_delete:hover {
+  background-color: red;
+}
+
+.modal__button_type_cancel {
+  width: 100px;
+  font-family: "Cabinet";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000;
+  padding: 5px 16px;
+}
+
+.modal__button_type_cancel:hover {
+  background-color: gray;
+}
+
 .modal__submit-button {
   width: 120px;
   border-radius: 20px;
