@@ -67,11 +67,28 @@
 
 @media screen and (max-width: 479px) {
   .header {
-    width: 100vw;
-    border-radius: 0;
+    width: 110vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
   }
 
   .header__title {
     margin-right: 10px;
+  }
+
+  .header__auth-buttons:last-child {
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .header__auth-buttons:first-child {
+    padding-top: 15px;
+  }
+  .header__auth-buttons {
+    margin: 10px 20px;
   }
 }
