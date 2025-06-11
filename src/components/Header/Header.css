@@ -58,11 +58,6 @@
   background-color: #e8e8e8;
 }
 
-
-.header__button:last-child {
-  margin-top: 10px;
-}
-
 @media screen and (max-width: 479px) {
   .header {
     width: 110vw;
@@ -81,7 +76,6 @@
     border: none;
     background-color: white;
     color: #72c8f7;
-
   }
 
   .header__button:last-child {
@@ -120,16 +114,15 @@
   }
 }
 
-
 @media screen and (max-width: 770px) {
   .header__auth-buttons:first-child {
     padding-top: 15px;
   }
   .header__auth-buttons {
     margin: 10px 20px;
+  }
 
   .header__button:hover {
     background-color: #e8e8e8;
-
   }
 }
