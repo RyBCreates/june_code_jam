@@ -20,8 +20,7 @@ function About() {
         <ul className="cards">
           <li className="card">
             <img
-              className="card__img card__img-ryan
-"
+              className="card__img card__img-ryan"
               src={Ryan}
               alt="Ryan Bommarito"
             />
@@ -51,7 +50,11 @@ function About() {
             </div>
           </li>
           <li className="card">
-            <img className="card__img" src={Avery} alt="Avery Walker" />
+            <img
+              className="card__img card__img-avery"
+              src={Avery}
+              alt="Avery Walker"
+            />
             <div className="card__content">
               <h3 className="card__author">Avery Walker</h3>
               <p className="card__description">
