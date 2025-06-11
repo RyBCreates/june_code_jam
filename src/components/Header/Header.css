@@ -24,14 +24,13 @@
   color: white;
   border-radius: 12px;
   padding: 20px 40px;
-  border-radius: 12px;
   box-shadow: 10px 10px 20px 1px rgb(0 0 0 / 40%);
-  scale: 100%;
+  transform: scale(1);
   transition: 0.2s ease-in-out;
 }
 
 .header__new-plan-button:hover {
-  scale: 101%;
+  transform: scale(1.01);
   cursor: pointer;
   color: black;
   background-color: #fff;
