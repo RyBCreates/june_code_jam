@@ -6,8 +6,8 @@ A full-stack application that helps users manage their travel plans and add pers
 
 ## 🔗 Live Demo
 
-👉 [Deployed Frontend](https://your-frontend-url.com)  
-👉 [Deployed Backend](https://your-backend-url.com)
+👉 [Deployed Frontend](https://rybcreates.github.io)  
+👉 [Deployed Backend](https://itinerarium.onrender.com/)
 
 ---
 

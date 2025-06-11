@@ -39,7 +39,21 @@
 }
 
 .header__auth-buttons {
+  gap: 20px;
 }
 
 .header__button {
+  width: 160px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: transparent;
+  border: #fff 1px solid;
+  margin-left: 20px;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  cursor: pointer;
+}
+
+.header__button:hover {
+  background-color: #e8e8e8;
 }
