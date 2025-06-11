@@ -46,6 +46,10 @@
   object-position: 50% 15%;
 }
 
+.card__img-avery {
+  object-position: 50% 38%;
+}
+
 .card__content {
   padding: 10px;
 }
