@@ -23,9 +23,6 @@ function App() {
   //Use for navigation to Trip Editor
   const navigate = useNavigate();
 
-  // Current Trip Context
-  const [currentTrip, setCurrentTrip] = useState(null);
-
   //Registration && Login
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
@@ -221,10 +218,10 @@ function App() {
   };
 
   //Edit a Trip - (Open Trip Editor)
-  const [selectedTrip, setSelectedTrip] = useState({});
+  const [currentTrip, setCurrentTrip] = useState({});
 
   const handleTripClick = (trip) => {
-    setSelectedTrip(trip);
+    setCurrentTrip(trip);
     navigate(`/trip-editor/${trip._id}`);
   };
 
@@ -239,8 +236,8 @@ function App() {
     >
       <CurrentTripContext.Provider
         value={{
-          currentTrip: selectedTrip,
-          setCurrentTrip: setSelectedTrip,
+          currentTrip,
+          setCurrentTrip,
           handleTripClick,
         }}
       >

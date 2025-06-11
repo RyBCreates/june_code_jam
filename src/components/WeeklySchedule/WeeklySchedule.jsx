@@ -1,11 +1,22 @@
+import { useContext } from "react";
+import { formatTripDates } from "../../utils/dateFormat";
 import "./WeeklySchedule.css";
+import CurrentTripContext from "../../contexts/CurrentTripContext";
 
 function WeeklySchedule() {
+  const { currentTrip } = useContext(CurrentTripContext);
+
+  // Format dates
+  const formattedDates = formatTripDates(
+    currentTrip.startDate,
+    currentTrip.endDate
+  );
+
   return (
     <div className="weekly-schedule">
       <div className="weekly-schedule__header">
         <h2 className="weekly-schedule__title">Trip Plan -</h2>
-        <p className="weekly-schedule__dates">(Apr 15th - Apr 19th)</p>
+        <p className="weekly-schedule__dates">({formattedDates})</p>
       </div>
       <ul className="weekly-schedule__calendar-grid">
         <li className="weekly-schedule__tile">
