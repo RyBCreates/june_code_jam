@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { formatTripDates } from "../../utils/DateFormat";
+import { formatTripDates } from "../../utils/dateFormat";
 import { getFallbackImage } from "../../utils/travelIconFallback";
 import "./TripCard.css";
 
