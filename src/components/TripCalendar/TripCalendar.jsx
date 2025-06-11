@@ -20,7 +20,7 @@ function TripCalendar({ trips }) {
     })
       .then((res) => {
         if (res.status === 404) {
-          return { text: "" }; // Treat "not found" as an empty note
+          return { text: "" };
         }
         if (!res.ok) {
           throw new Error("Fetch failed");
