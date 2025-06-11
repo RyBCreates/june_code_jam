@@ -73,6 +73,8 @@
 }
 
 .modal__submit-button {
+  width: 120px;
+  border-radius: 20px;
   font-family: "Cabinet";
   font-weight: 700;
   font-size: 16px;
@@ -82,11 +84,17 @@
   border: none;
   background: #000000;
   cursor: pointer;
-  margin-top: 30px;
+  margin: 30px 20px 10px;
 }
 
 .modal__submit-button:hover {
   background-color: #00000099;
+}
+
+.modal__button_alternate {
+  background-color: transparent;
+  font-family: "Cabinet";
+  border: none;
 }
 
 .modal__radio-buttons {

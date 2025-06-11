@@ -1,5 +1,7 @@
 import "./About.css";
 import Inzira from "../../assets/Inzira.png";
+import Ryan from "../../assets/Ryan-Profile.jpg";
+import Avery from "../../assets/Avery.Profile.PNG";
 
 function About() {
   return (
@@ -17,10 +19,24 @@ function About() {
         <h2 className="about-team__title"> Meet "The Itinerarians" </h2>
         <ul className="cards">
           <li className="card">
-            <img className="card__img" src="" alt="Ryan Bommarito" />
+            <img
+              className="card__img card__img-ryan
+"
+              src={Ryan}
+              alt="Ryan Bommarito"
+            />
             <div className="card__content">
               <h3 className="card__author">Ryan Bommarito</h3>
-              <p className="card__description">About Ryan</p>
+              <p className="card__description">
+                With a professional background in film and television, I
+                currently serve as the Assistant Camera on TLC’s 1000-lb
+                Sisters. As I transition into software engineering, I’m seeking
+                to apply my creative problem-solving skills and production
+                experience to a more stable and scalable career in technology. I
+                have a strong interest in web development and am continuously
+                working on projects that reflect both technical growth and
+                user-focused design.
+              </p>
             </div>
           </li>
           <li className="card">
@@ -35,10 +51,16 @@ function About() {
             </div>
           </li>
           <li className="card">
-            <img className="card__img" src="" alt="Avery Walker" />
+            <img className="card__img" src={Avery} alt="Avery Walker" />
             <div className="card__content">
               <h3 className="card__author">Avery Walker</h3>
-              <p className="card__description">About Avery</p>
+              <p className="card__description">
+                Father of two beautiful daughters, with a wife of almost 7
+                years, I have always dreamed of a career in Technology.
+                Currently, I am the Assistant Director of Operations at a
+                growing coffee chain. My focus is to grow into a Full Stack
+                Engineering role after completing this program.
+              </p>
             </div>
           </li>
         </ul>
