@@ -48,3 +48,16 @@ export function updateProfile({ name }) {
     body: JSON.stringify({ name }),
   }).then(checkResponse);
 }
+
+// Adding Events to the Trip Schedule
+export const addEvent = (tripId, eventData) => {
+  const token = getToken();
+  return fetch(`${baseUrl}/trips/${tripId}/events`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(eventData),
+  }).then(checkResponse);
+};

@@ -8,49 +8,22 @@ function TripCalendar({ trips }) {
   const [notes, setNotes] = useState({});
 
   useEffect(() => {
-    const token = localStorage.getItem("jwt");
-    const dateStr = date.toISOString().split("T")[0];
+    const storedNotes = JSON.parse(localStorage.getItem("calendarNotes")) || {};
+    setNotes(storedNotes);
+  }, []);
 
-    if (!token || !dateStr) return;
-
-    fetch(`http://localhost:3001/notes/${dateStr}`, {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((res) => {
-        if (res.status === 404) {
-          return { text: "" };
-        }
-        if (!res.ok) {
-          throw new Error("Fetch failed");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        setNotes((prev) => ({
-          ...prev,
-          [dateStr]: data.text || "",
-        }));
-      })
-      .catch((err) => console.error("Error fetching note:", err));
-  }, [date]);
+  useEffect(() => {
+    localStorage.setItem("calendarNotes", JSON.stringify(notes));
+  }, [notes]);
 
   const handleNoteChange = (e) => {
     const value = e.target.value;
     const dateStr = date.toDateString();
-    const token = localStorage.getItem("jwt");
 
-    setNotes((prev) => ({ ...prev, [dateStr]: value }));
-
-    fetch(`http://localhost:3001/notes/${dateStr}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify({ text: value }),
-    }).catch((err) => console.error("Error saving note:", err));
+    setNotes((prev) => ({
+      ...prev,
+      [dateStr]: value,
+    }));
   };
 
   const getTripsForDate = (selectedDate) => {

@@ -24,14 +24,13 @@
   color: white;
   border-radius: 12px;
   padding: 20px 40px;
-  border-radius: 12px;
   box-shadow: 10px 10px 20px 1px rgb(0 0 0 / 40%);
-  scale: 100%;
+  transform: scale(1);
   transition: 0.2s ease-in-out;
 }
 
 .header__new-plan-button:hover {
-  scale: 101%;
+  transform: scale(1.01);
   cursor: pointer;
   color: black;
   background-color: #fff;
@@ -40,26 +39,25 @@
 
 .header__auth-buttons {
   display: flex;
-  flex-direction: column;
   align-items: stretch;
   gap: 20px;
 }
 
 .header__button {
-  width: 160px;
-  height: 50px;
+  background-color: black;
+  padding: 20px 40px;
+  border: none;
+
   border-radius: 100px;
-  background-color: transparent;
-  border: #fff 1px solid;
-  margin-left: 20px;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
   cursor: pointer;
 }
 
 .header__button:hover {
+  color: black;
   background-color: #e8e8e8;
 }
+
 
 .header__button:last-child {
   margin-top: 10px;
@@ -83,6 +81,7 @@
     border: none;
     background-color: white;
     color: #72c8f7;
+
   }
 
   .header__button:last-child {
@@ -121,11 +120,16 @@
   }
 }
 
+
 @media screen and (max-width: 770px) {
   .header__auth-buttons:first-child {
     padding-top: 15px;
   }
   .header__auth-buttons {
     margin: 10px 20px;
+
+  .header__button:hover {
+    background-color: #e8e8e8;
+
   }
 }
