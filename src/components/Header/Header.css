@@ -47,6 +47,7 @@
   background-color: black;
   padding: 20px 40px;
   border: none;
+
   border-radius: 100px;
   color: #fff;
   cursor: pointer;
@@ -57,29 +58,78 @@
   background-color: #e8e8e8;
 }
 
+
+.header__button:last-child {
+  margin-top: 10px;
+}
+
 @media screen and (max-width: 479px) {
   .header {
-    width: 100vw;
-    border-radius: 0;
+    width: 110vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px;
   }
 
   .header__title {
     margin-right: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 12px;
+    border: none;
+    background-color: white;
+    color: #72c8f7;
+
   }
 
-  .header__button {
-    width: 160px;
-    height: 50px;
-    border-radius: 100px;
-    background-color: transparent;
-    border: #fff 1px solid;
-    margin-left: 20px;
-    color: #fff;
-    font-family: Arial, Helvetica, sans-serif;
-    cursor: pointer;
+  .header__button:last-child {
+    margin-top: 10px;
   }
+
+  @media screen and (max-width: 479px) {
+    .header {
+      width: 100vw;
+      border-radius: 0;
+    }
+
+    .header__title {
+      margin-right: 10px;
+    }
+
+    .header__button {
+      width: 160px;
+      height: 50px;
+      border-radius: 100px;
+      background-color: transparent;
+      border: #fff 1px solid;
+      margin-left: 20px;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+    }
+
+    .header__button:hover {
+      background-color: #e8e8e8;
+    }
+
+    .header__auth-buttons:last-child {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 770px) {
+  .header__auth-buttons:first-child {
+    padding-top: 15px;
+  }
+  .header__auth-buttons {
+    margin: 10px 20px;
 
   .header__button:hover {
     background-color: #e8e8e8;
+
   }
 }
