@@ -182,3 +182,43 @@
   border-radius: 20px;
   background-color: rgb(184, 184, 184);
 }
+
+@media screen and (max-width: 479px) {
+  .day-schedule__date {
+    font-size: 28px;
+  }
+
+  .day-schedule__left-arrow {
+    width: 36px;
+  }
+
+  .day-schedule__calendar {
+    width: 36px;
+  }
+
+  .day-schedule__right-arrow {
+    width: 36px;
+  }
+
+  .day-schedule__event-title {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .day-schedule__time {
+    font-size: 22px;
+  }
+
+  .day-schedule__location-icon {
+    width: 36px;
+  }
+
+  .day-schedule__location-address {
+    font-size: 28px;
+  }
+
+  .day-schedule__event-note {
+    font-size: 28px;
+  }
+}
