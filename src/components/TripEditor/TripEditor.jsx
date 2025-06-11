@@ -5,7 +5,7 @@ import "./TripEditor.css";
 
 function TripEditor() {
   return (
-    <div className="trip-editor">
+    <div className="trip-editor app__section">
       <h2 className="trip-editor__title">"Trip Name" Editor</h2>
       <div className="trip-editor__workspace">
         <Scheduler />

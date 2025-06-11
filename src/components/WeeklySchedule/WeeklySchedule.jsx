@@ -10,16 +10,29 @@ function WeeklySchedule() {
       <ul className="weekly-schedule__calendar-grid">
         <li className="weekly-schedule__tile">
           <div className="weekly-schedule__tile-date-container">
-            <p className="weekly-schedule__tile-date">April 15th</p>
+            <p className="weekly-schedule__tile-date">April 16th</p>
           </div>
           <div className="weekly-schedule__tile-schedule-container">
-            <div className="weekly-schedule__tile-event">
-              <p className="weekly-schedule__tile-time">9:00 AM</p>
-              <p className="weekly-schedule__tile-title">Arrive in Paris</p>
-            </div>
-            <p className="weekly-schedule__tile-note">
-              Get a Taxi from the airport
-            </p>
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">12:00 AM</p>
+                <p className="weekly-schedule__tile-title">Eat Lunch</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">Buy Tickets</p>
+              </li>
+            </ul>
           </div>
         </li>
         <li className="weekly-schedule__tile">
@@ -27,41 +40,19 @@ function WeeklySchedule() {
             <p className="weekly-schedule__tile-date">April 16th</p>
           </div>
           <div className="weekly-schedule__tile-schedule-container">
-            <div className="weekly-schedule__tile-event">
-              <p className="weekly-schedule__tile-time">9:00 AM</p>
-              <p className="weekly-schedule__tile-title">Arrive in Paris</p>
-            </div>
-            <p className="weekly-schedule__tile-note">
-              Get a Taxi from the airport
-            </p>
-          </div>
-        </li>
-        <li className="weekly-schedule__tile">
-          <div className="weekly-schedule__tile-date-container">
-            <p className="weekly-schedule__tile-date">April 17th</p>
-          </div>
-          <div className="weekly-schedule__tile-schedule-container">
-            <div className="weekly-schedule__tile-event">
-              <p className="weekly-schedule__tile-time">9:00 AM</p>
-              <p className="weekly-schedule__tile-title">Arrive in Paris</p>
-            </div>
-            <p className="weekly-schedule__tile-note">
-              Get a Taxi from the airport
-            </p>
-          </div>
-        </li>{" "}
-        <li className="weekly-schedule__tile">
-          <div className="weekly-schedule__tile-date-container">
-            <p className="weekly-schedule__tile-date">April 15th</p>
-          </div>
-          <div className="weekly-schedule__tile-schedule-container">
-            <div className="weekly-schedule__tile-event">
-              <p className="weekly-schedule__tile-time">9:00 AM</p>
-              <p className="weekly-schedule__tile-title">Arrive in Paris</p>
-            </div>
-            <p className="weekly-schedule__tile-note">
-              Get a Taxi from the airport
-            </p>
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
           </div>
         </li>
         <li className="weekly-schedule__tile">
@@ -69,41 +60,19 @@ function WeeklySchedule() {
             <p className="weekly-schedule__tile-date">April 16th</p>
           </div>
           <div className="weekly-schedule__tile-schedule-container">
-            <div className="weekly-schedule__tile-event">
-              <p className="weekly-schedule__tile-time">9:00 AM</p>
-              <p className="weekly-schedule__tile-title">Arrive in Paris</p>
-            </div>
-            <p className="weekly-schedule__tile-note">
-              Get a Taxi from the airport
-            </p>
-          </div>
-        </li>
-        <li className="weekly-schedule__tile">
-          <div className="weekly-schedule__tile-date-container">
-            <p className="weekly-schedule__tile-date">April 17th</p>
-          </div>
-          <div className="weekly-schedule__tile-schedule-container">
-            <div className="weekly-schedule__tile-event">
-              <p className="weekly-schedule__tile-time">9:00 AM</p>
-              <p className="weekly-schedule__tile-title">Arrive in Paris</p>
-            </div>
-            <p className="weekly-schedule__tile-note">
-              Get a Taxi from the airport
-            </p>
-          </div>
-        </li>{" "}
-        <li className="weekly-schedule__tile">
-          <div className="weekly-schedule__tile-date-container">
-            <p className="weekly-schedule__tile-date">April 15th</p>
-          </div>
-          <div className="weekly-schedule__tile-schedule-container">
-            <div className="weekly-schedule__tile-event">
-              <p className="weekly-schedule__tile-time">9:00 AM</p>
-              <p className="weekly-schedule__tile-title">Arrive in Paris</p>
-            </div>
-            <p className="weekly-schedule__tile-note">
-              Get a Taxi from the airport
-            </p>
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
           </div>
         </li>
         <li className="weekly-schedule__tile">
@@ -111,27 +80,159 @@ function WeeklySchedule() {
             <p className="weekly-schedule__tile-date">April 16th</p>
           </div>
           <div className="weekly-schedule__tile-schedule-container">
-            <div className="weekly-schedule__tile-event">
-              <p className="weekly-schedule__tile-time">9:00 AM</p>
-              <p className="weekly-schedule__tile-title">Arrive in Paris</p>
-            </div>
-            <p className="weekly-schedule__tile-note">
-              Get a Taxi from the airport
-            </p>
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
           </div>
         </li>
         <li className="weekly-schedule__tile">
           <div className="weekly-schedule__tile-date-container">
-            <p className="weekly-schedule__tile-date">April 17th</p>
+            <p className="weekly-schedule__tile-date">April 16th</p>
           </div>
           <div className="weekly-schedule__tile-schedule-container">
-            <div className="weekly-schedule__tile-event">
-              <p className="weekly-schedule__tile-time">9:00 AM</p>
-              <p className="weekly-schedule__tile-title">Arrive in Paris</p>
-            </div>
-            <p className="weekly-schedule__tile-note">
-              Get a Taxi from the airport
-            </p>
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li className="weekly-schedule__tile">
+          <div className="weekly-schedule__tile-date-container">
+            <p className="weekly-schedule__tile-date">April 16th</p>
+          </div>
+          <div className="weekly-schedule__tile-schedule-container">
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li className="weekly-schedule__tile">
+          <div className="weekly-schedule__tile-date-container">
+            <p className="weekly-schedule__tile-date">April 16th</p>
+          </div>
+          <div className="weekly-schedule__tile-schedule-container">
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li className="weekly-schedule__tile">
+          <div className="weekly-schedule__tile-date-container">
+            <p className="weekly-schedule__tile-date">April 16th</p>
+          </div>
+          <div className="weekly-schedule__tile-schedule-container">
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li className="weekly-schedule__tile">
+          <div className="weekly-schedule__tile-date-container">
+            <p className="weekly-schedule__tile-date">April 16th</p>
+          </div>
+          <div className="weekly-schedule__tile-schedule-container">
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li className="weekly-schedule__tile">
+          <div className="weekly-schedule__tile-date-container">
+            <p className="weekly-schedule__tile-date">April 16th</p>
+          </div>
+          <div className="weekly-schedule__tile-schedule-container">
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li className="weekly-schedule__tile">
+          <div className="weekly-schedule__tile-date-container">
+            <p className="weekly-schedule__tile-date">April 16th</p>
+          </div>
+          <div className="weekly-schedule__tile-schedule-container">
+            <ul className="weekly-schedule__tile-events">
+              <li className="weekly-schedule__tile-event">
+                <p className="weekly-schedule__tile-time">9:00 AM</p>
+                <p className="weekly-schedule__tile-title">Arrive in Paris</p>
+              </li>
+            </ul>
+            <ul className="weekly-schedule__tile-notes">
+              <li className="weekly-schedule__tile-note">
+                <p className="weekly-schedule__note">
+                  Get a Taxi from the airport
+                </p>
+              </li>
+            </ul>
           </div>
         </li>
       </ul>
