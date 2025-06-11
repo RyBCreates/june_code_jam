@@ -6,7 +6,7 @@ A full-stack application that helps users manage their travel plans and add pers
 
 ## 🔗 Live Demo
 
-👉 [Deployed Frontend](https://rybcreates.github.io)  
+👉 [Deployed Frontend](https://rybcreates.github.io/june_code_jam/?#/)  
 👉 [Deployed Backend](https://itinerarium.onrender.com/)
 
 ---
@@ -26,6 +26,20 @@ A full-stack application that helps users manage their travel plans and add pers
 - **MongoDB + Mongoose** — Database
 - **JWT** — Authentication
 
+## Future Goals
+
+### Adding Events to Schedule
+
+- Currently this feature is not working, but when a user clicks on a Trip they will be directed to the Trip Editor, where they can customize their daily schedule for that specific trip.
+
+### Collaboration
+
+- In future iterations, users will be able to join together into groups and share their trips between devices and update them together!
+
+### Mapping the Trip
+
+- Users will be able to see on a map, where their trip is and be able to look up restaurants or museums or other events to add to their itineraries.
+
 ---
 
 ## How to Run Locally
@@ -39,6 +53,9 @@ npm install
 npm run dev
 ```
 
+```bash
+git clone https://github.com/RyBCreates/june_code_jam_backend.git
 cd june_code_jam_backend
 npm install
 npm run dev
+```
