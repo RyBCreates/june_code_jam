@@ -2,6 +2,7 @@
   font-size: 32px;
   font-family: "Cabinet";
   font-weight: 700;
+  padding: 0 15px;
 }
 
 .navbar__links {
@@ -59,4 +60,14 @@
 .navbar__link-about:focus {
   color: black;
   border-bottom: 5px solid black;
+}
+
+@media screen and (max-width: 1115px) {
+  .navbar {
+    font-size: 18px;
+  }
+
+  .navbar__links {
+    gap: 25px;
+  }
 }
