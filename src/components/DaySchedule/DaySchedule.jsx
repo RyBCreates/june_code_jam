@@ -4,8 +4,14 @@ import ForwardArrow from "../../assets/arrows/forward-arrow.png";
 import LocationPin from "../../assets/location-pin.png";
 import Calendar from "../../assets/calendar.png";
 import "./DaySchedule.css";
+import { useContext } from "react";
+import CurrentTripContext from "../../contexts/CurrentTripContext";
 
 function DaySchedule({ events }) {
+  const { currentTrip } = useContext(CurrentTripContext);
+
+  console.log("DaySchedule received events:", events);
+
   return (
     <div className="day-schedule">
       <div className="day-schedule__header">
@@ -23,8 +29,12 @@ function DaySchedule({ events }) {
         </div>
       </div>
       <ul className="day-schedule__event-cards">
-        <EventCard />
-        <li className="day-schedule__event-card">
+        {events
+          .filter((event) => event.tripId === currentTrip?._id)
+          .map((event) => (
+            <EventCard key={event._id} event={event} />
+          ))}
+        {/* <li className="day-schedule__event-card">
           <div className="day-schedule__duration">
             <h3 className="day-schedule__time">
               <span className="day-schedule__start-time">10:00 AM</span>
@@ -60,7 +70,7 @@ function DaySchedule({ events }) {
               </div>
             </div>
           </div>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

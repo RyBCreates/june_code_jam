@@ -84,7 +84,7 @@ function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
               className="modal__input"
               type="text"
               id="trip-name"
-              placeholder="New York City"
+              placeholder="Summer Vacation"
               value={name}
               onChange={(e) => setName(e.target.value)}
             ></input>
@@ -120,7 +120,7 @@ function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
               className="modal__input"
               type="text"
               id="location"
-              placeholder="Enter Your Destination"
+              placeholder="Paris"
               value={location}
               onChange={(e) => setLocation(e.target.value)}
             ></input>
@@ -132,7 +132,7 @@ function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
               className="modal__input"
               type="url"
               id="image"
-              placeholder="Image Url"
+              placeholder="Enter an Image Url"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
             ></input>

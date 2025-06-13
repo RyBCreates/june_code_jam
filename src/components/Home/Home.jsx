@@ -4,7 +4,7 @@ import "./Home.css";
 import { useContext } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Home({ handleNewTripClick, trips, handleDeleteTrip }) {
+function Home({ handleNewTripClick, trips, handleDeleteTrip, events }) {
   const { currentUser } = useContext(CurrentUserContext);
   return (
     <div className="home app__section">
@@ -15,7 +15,7 @@ function Home({ handleNewTripClick, trips, handleDeleteTrip }) {
             trips={trips}
             handleDeleteTrip={handleDeleteTrip}
           />
-          <DaySchedule />
+          <DaySchedule events={events} />
         </>
       ) : (
         <p className="home__text">

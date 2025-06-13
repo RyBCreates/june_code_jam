@@ -240,10 +240,15 @@ function App() {
       startTime,
       endTime,
       location,
+      tripId: currentTrip._id,
     };
     return addEvent(currentTrip._id, newEvent)
       .then((addedEvent) => {
-        setEvents([addedEvent, ...events]);
+        setEvents((prevEvents) => {
+          const updated = [addedEvent, ...prevEvents];
+          console.log("Uodated events state:", updated);
+          return updated;
+        });
         return addedEvent;
       })
       .catch((error) => {
@@ -271,7 +276,6 @@ function App() {
       <CurrentTripContext.Provider
         value={{
           currentTrip,
-          setCurrentTrip,
           handleTripClick,
         }}
       >
@@ -290,6 +294,7 @@ function App() {
                     handleNewTripClick={handleNewTripClick}
                     trips={trips}
                     handleDeleteTrip={handleDeleteTrip}
+                    events={events}
                   />
                 }
               />

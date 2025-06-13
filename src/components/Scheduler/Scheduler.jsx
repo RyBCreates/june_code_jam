@@ -5,9 +5,9 @@ import CurrentTripContext from "../../contexts/CurrentTripContext";
 
 function Scheduler({ onAddEvent }) {
   const [name, setName] = useState("");
-  const [location, setLocation] = useState("");
   const [startTime, setStartTime] = useState("");
   const [endTime, setEndTime] = useState("");
+  const [location, setLocation] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -41,9 +41,9 @@ function Scheduler({ onAddEvent }) {
     onAddEvent(name, startTime, endTime, location)
       .then(() => {
         setName("");
+        setLocation("");
         setStartTime("");
         setEndTime("");
-        setLocation("");
       })
       .catch((err) => {
         console.error(err);
@@ -110,7 +110,11 @@ function Scheduler({ onAddEvent }) {
             ></input>
           </label>
         </div>
-        <button className="scheduler__button" type="submit">
+        <button
+          className="scheduler__button"
+          type="submit"
+          onSubmit={handleSubmit}
+        >
           Add to Schedule
         </button>
       </form>

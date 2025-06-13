@@ -49,10 +49,20 @@ export function updateProfile({ name }) {
   }).then(checkResponse);
 }
 
+// Getting all Events
+export const getEvents = (tripId) => {
+  const token = getToken();
+  return fetch(`${baseUrl}/events/${tripId}/events`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  }).then(checkResponse);
+};
+
 // Adding Events to the Trip Schedule
 export const addEvent = (tripId, eventData) => {
   const token = getToken();
-  return fetch(`${baseUrl}/trips/${tripId}/events`, {
+  return fetch(`${baseUrl}/events/${tripId}/events`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
