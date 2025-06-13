@@ -82,7 +82,8 @@
 
 .upcoming__trip-name {
   font-size: 45px;
-  margin: 0 0 12px 0;
+  padding: 0 0 6px 0;
+  margin: 0;
   text-wrap: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -90,6 +91,7 @@
 }
 
 .upcoming__info {
+  padding: 6px 0 0 0;
   display: flex;
   justify-content: left;
   align-items: center;
