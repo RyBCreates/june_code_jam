@@ -3,8 +3,6 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "../Modals.css";
 
 function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
-  if (activeModal !== "new-trip") return null;
-
   const [name, setName] = useState("");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
@@ -65,6 +63,8 @@ function NewTripModal({ closeModal, activeModal, buttonText, onAddTrip }) {
 
     closeModal();
   };
+
+  if (activeModal !== "new-trip") return null;
 
   return (
     <div className="modal new-trip-modal modal_opened">

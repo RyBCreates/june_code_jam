@@ -29,6 +29,8 @@ function RegisterModal({
 
   const modalType = "register";
 
+  if (activeModal !== "register") return null;
+
   return (
     <div className="register">
       <ModalWithForm

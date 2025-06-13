@@ -6,11 +6,13 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 function Trips({ handleNewTripClick, trips, handleDeleteTrip }) {
   const { currentUser } = useContext(CurrentUserContext);
 
+  const userTrips = trips.filter((trip) => trip.owner === currentUser?._id);
+
   return (
     <div className="trips app__section">
       <h2 className="trips__title">{currentUser?.name || "Your"}'s Trips</h2>
       <ul className="trips__cards">
-        {trips.map((trip) => {
+        {userTrips.map((trip) => {
           return (
             <TripCard
               key={trip._id}
