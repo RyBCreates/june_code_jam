@@ -5,8 +5,6 @@ import CurrentUserContext from "../../../contexts/CurrentUserContext";
 import "./LoginModal.css";
 
 function LoginModal({ activeModal, closeModal, buttonText, switchToRegister }) {
-  if (activeModal !== "login") return null;
-
   const { handleLogin } = useContext(CurrentUserContext);
 
   const [email, setEmail] = useState("");
@@ -30,6 +28,8 @@ function LoginModal({ activeModal, closeModal, buttonText, switchToRegister }) {
       setEmail("");
     }
   }, [activeModal]);
+
+  if (activeModal !== "login") return null;
 
   return (
     <div className="modal login-modal modal_opened">

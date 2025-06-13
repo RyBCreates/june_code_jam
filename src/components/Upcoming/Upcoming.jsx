@@ -5,13 +5,18 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function Upcoming({ handleNewTripClick, trips, handleDeleteTrip }) {
   const { currentUser } = useContext(CurrentUserContext);
+
+  const userTrips = trips.filter((trip) => trip.owner === currentUser?._id);
+
   return (
     <div className="upcoming">
       <h2 className="upcoming__title">
-        Upcoming Trips for {currentUser?.name || "You"}
+        {currentUser?.name
+          ? `Upcoming Trips for ${currentUser.name}`
+          : "Your Upcoming Trips"}
       </h2>
       <ul className="upcoming__cards-list">
-        {trips.map((trip) => {
+        {userTrips.map((trip) => {
           return (
             <TripCard
               variant="upcoming"

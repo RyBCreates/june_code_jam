@@ -74,7 +74,11 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
             <div className="trip-card__button-container">
               <button
                 className={tripDeleteButtonClass}
-                onClick={() => handleDeleteTrip(trip)}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleDeleteTrip(trip);
+                }}
               >
                 DELETE
               </button>
@@ -85,7 +89,11 @@ function TripCard({ variant = "default", trip, handleDeleteTrip }) {
           <div className="upcoming__button-container">
             <button
               className={tripDeleteButtonClass}
-              onClick={() => handleDeleteTrip(trip)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                handleDeleteTrip(trip);
+              }}
             >
               DELETE
             </button>

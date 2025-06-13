@@ -83,6 +83,10 @@
 .upcoming__trip-name {
   font-size: 45px;
   margin: 0 0 12px 0;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
 }
 
 .upcoming__info {
@@ -98,6 +102,7 @@
   color: grey;
   border-right: 3px solid #72c8f7;
   padding-right: 20px;
+  text-wrap: nowrap;
 }
 
 .upcoming__location {
@@ -105,6 +110,10 @@
   font-size: 40px;
   color: grey;
   padding-left: 20px;
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 500px;
 }
 
 .upcoming__button-container {
@@ -123,6 +132,7 @@
 
 .upcoming__delete-button:hover {
   color: red;
+  cursor: pointer;
 }
 
 .upcoming__card:hover .upcoming__button-container {
@@ -148,6 +158,9 @@
   background-color: #72c8f7;
 
   cursor: pointer;
+}
+
+@media screen and (max-width: 1115px) {
 }
 
 @media screen and (max-width: 580px) {

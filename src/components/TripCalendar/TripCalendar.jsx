@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./TripCalendar.css";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 function TripCalendar({ trips }) {
+  const { currentUser } = useContext(CurrentUserContext);
+
   const [date, setDate] = useState(new Date());
   const [notes, setNotes] = useState({});
+
+  const userTrips = trips.filter((trip) => {
+    trip.owner === currentUser?._id;
+  });
 
   useEffect(() => {
     const storedNotes = JSON.parse(localStorage.getItem("calendarNotes")) || {};
@@ -28,7 +35,7 @@ function TripCalendar({ trips }) {
 
   const getTripsForDate = (selectedDate) => {
     return (
-      trips?.filter((trip) => {
+      userTrips?.filter((trip) => {
         const start = new Date(trip.startDate);
         const end = new Date(trip.endDate);
         const date = new Date(selectedDate);

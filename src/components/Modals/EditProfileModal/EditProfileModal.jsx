@@ -6,8 +6,6 @@ import CurrentUserContext from "../../../contexts/CurrentUserContext";
 function EditProfileModal({ activeModal, closeModal, buttonText }) {
   const { currentUser, updateUser } = useContext(CurrentUserContext);
 
-  if (activeModal !== "edit-profile") return null;
-
   const modalType = "edit-profile";
 
   const [name, setName] = useState("");
@@ -26,6 +24,8 @@ function EditProfileModal({ activeModal, closeModal, buttonText }) {
       })
       .catch((err) => console.error(err));
   };
+
+  if (activeModal !== "edit-profile") return null;
 
   return (
     <div className="edit-profile-modal">
