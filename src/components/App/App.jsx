@@ -29,9 +29,20 @@ function App() {
   //Use for navigation to Trip Editor
   const navigate = useNavigate();
 
+  // Show Loading Animation
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [activeModal, setActiveModal] = useState("");
+
   //Registration && Login
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+
+  const [currentTrip, setCurrentTrip] = useState({});
+  const [events, setEvents] = useState([]);
+
+  const [trips, setTrips] = useState([]);
+  const [tripToDelete, setTripToDelete] = useState(null);
 
   const handleRegisterClick = () => {
     setActiveModal("register");
@@ -138,8 +149,6 @@ function App() {
   }, []);
 
   //Opening and Closing of Modals
-  const [activeModal, setActiveModal] = useState("");
-
   const closeModal = () => {
     setActiveModal("");
   };
@@ -168,8 +177,6 @@ function App() {
   const handleNewTripClick = () => {
     setActiveModal("new-trip");
   };
-
-  const [trips, setTrips] = useState([]);
 
   const handleAddTripSubmit = (
     name,
@@ -200,7 +207,6 @@ function App() {
   };
 
   //Delete a Trip
-  const [tripToDelete, setTripToDelete] = useState(null);
 
   const handleDeleteTrip = (trip) => {
     setTripToDelete(trip);
@@ -224,16 +230,12 @@ function App() {
   };
 
   //Edit a Trip - (Open Trip Editor)
-  const [currentTrip, setCurrentTrip] = useState({});
-
   const handleTripClick = (trip) => {
     setCurrentTrip(trip);
     navigate(`/trip-editor/${trip._id}`);
   };
 
   // Add an Event
-  const [events, setEvents] = useState([]);
-
   const handleAddEventSubmit = (name, startTime, endTime, location) => {
     const newEvent = {
       name,
@@ -295,6 +297,8 @@ function App() {
                     trips={trips}
                     handleDeleteTrip={handleDeleteTrip}
                     events={events}
+                    isLoading={isLoading}
+                    setIsLoading={setIsLoading}
                   />
                 }
               />

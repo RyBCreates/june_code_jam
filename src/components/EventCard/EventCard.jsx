@@ -2,7 +2,6 @@ import LocationPin from "../../assets/location-pin.png";
 import "./EventCard.css";
 
 function EventCard({ event }) {
-  console.log("This is eventStart:", event.startTime);
   return (
     <li className="day-schedule__event-card">
       <div className="day-schedule__duration">

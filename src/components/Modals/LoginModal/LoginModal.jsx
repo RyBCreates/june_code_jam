@@ -24,8 +24,8 @@ function LoginModal({ activeModal, closeModal, buttonText, switchToRegister }) {
 
   useEffect(() => {
     if (activeModal === "login") {
-      setPassword("");
-      setEmail("");
+      setPassword("1234");
+      setEmail("devtest@email.com");
     }
   }, [activeModal]);
 

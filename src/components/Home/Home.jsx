@@ -1,14 +1,36 @@
 import Upcoming from "../Upcoming/Upcoming";
 import DaySchedule from "../DaySchedule/DaySchedule";
 import "./Home.css";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-function Home({ handleNewTripClick, trips, handleDeleteTrip, events }) {
+function Home({
+  handleNewTripClick,
+  trips,
+  handleDeleteTrip,
+  events,
+  isLoading,
+  setIsLoading,
+}) {
   const { currentUser } = useContext(CurrentUserContext);
+
+  useEffect(() => {
+    try {
+      setIsLoading(true);
+    } catch (err) {
+      console.err(err);
+    } finally {
+      setIsLoading(false);
+    }
+  }, []);
+
   return (
     <div className="home app__section">
-      {currentUser ? (
+      {isLoading ? (
+        <>
+          <p>Page is Loading...</p>
+        </>
+      ) : currentUser ? (
         <>
           <Upcoming
             handleNewTripClick={handleNewTripClick}
